@@ -1,0 +1,19 @@
+{
+  "name": "dairymilk-website",
+  "version": "1.0.0",
+  "description": "Cadbury Dairy Milk - Interactive 3D Scroll Animation Website",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx -y serve .",
+    "start": "npx -y serve ."
+  },
+  "keywords": [
+    "cadbury",
+    "dairy-milk",
+    "scroll-animation",
+    "canvas-animation",
+    "vercel"
+  ],
+  "author": "SHIVA8325",
+  "license": "MIT"
+}

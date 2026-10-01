@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadbury Dairy Milk | The Ultimate Chocolate Experience</title>
+    <meta name="description" content="Experience the rich, creamy world of Cadbury Dairy Milk through an interactive 3D scroll animation journey.">
+    
+    <!-- Google Fonts & Material Symbols -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+
+    <!-- Tailwind CSS & Theme Config -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "secondary-container": "#feae2c",
+            "surface-container": "#2a0454",
+            "on-background": "#ffffff",
+            "on-tertiary-container": "#f0bba5",
+            "on-tertiary-fixed-variant": "#d8c4f0",
+            "surface-tint": "#8b5cf6",
+            "outline": "rgba(255, 255, 255, 0.12)",
+            "background": "#14002e",
+            "secondary": "#feae2c",
+            "on-secondary-fixed": "#1c0038",
+            "on-surface": "#ffffff",
+            "on-tertiary": "#ffffff",
+            "primary-fixed-dim": "#a78bfa",
+            "secondary-fixed-dim": "#ffb955",
+            "primary-container": "#2d0059",
+            "surface-bright": "#220042",
+            "primary": "#feae2c",
+            "on-secondary-fixed-variant": "#633f00",
+            "primary-fixed": "#ebdcff",
+            "on-surface-variant": "#d4c2ec",
+            "on-secondary-container": "#6b4500",
+            "surface-container-lowest": "#240049",
+            "on-tertiary-fixed": "#301407",
+            "surface-variant": "#30045e",
+            "surface-container-highest": "#3c0475",
+            "on-primary-fixed": "#24094e",
+            "inverse-primary": "#d4bbff",
+            "secondary-fixed": "#ffddb4",
+            "surface-dim": "#170030",
+            "surface-container-high": "#36006c",
+            "error-container": "#ffdad6",
+            "on-primary-container": "#ffd97d",
+            "surface-container-low": "#1d003b",
+            "on-primary": "#ffffff",
+            "on-error": "#ffffff",
+            "surface": "#160033",
+            "error": "#ba1a1a",
+            "tertiary-container": "#301407",
+            "on-secondary": "#ffffff",
+            "inverse-surface": "#f4f0ea",
+            "outline-variant": "rgba(254, 174, 44, 0.3)",
+            "tertiary-fixed": "#ffdbcd",
+            "tertiary": "#feae2c",
+            "on-primary-fixed-variant": "#513a7c",
+            "tertiary-fixed-dim": "#f0bba5",
+            "inverse-on-surface": "#1c1c18",
+            "on-error-container": "#93000a"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin-mobile": "1.25rem",
+            "space-lg": "1.5rem",
+            "gutter": "1.5rem",
+            "gutter-mobile": "1rem",
+            "space-md": "1rem",
+            "margin": "3rem",
+            "space-sm": "0.5rem",
+            "space-xl": "2.5rem",
+            "space-xs": "0.25rem"
+          },
+          "fontFamily": {
+            "body-md": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "headline-md": ["Playfair Display"],
+            "headline-sm": ["Playfair Display"],
+            "title-lg": ["Plus Jakarta Sans"],
+            "display-hero": ["Playfair Display"],
+            "label-md": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "headline-lg": ["Playfair Display"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "display-hero-mobile": ["Playfair Display"],
+            "headline-lg-mobile": ["Playfair Display"],
+            "body-lg": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "body-md": ["15px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "headline-md": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+            "headline-sm": ["22px", { "lineHeight": "30px", "fontWeight": "600" }],
+            "title-lg": ["18px", { "lineHeight": "26px", "fontWeight": "700" }],
+            "display-hero": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "body-sm": ["13px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "700" }],
+            "display-hero-mobile": ["38px", { "lineHeight": "46px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "headline-lg-mobile": ["30px", { "lineHeight": "38px", "fontWeight": "700" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
+          }
+        }
+      }
+    };
+    </script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Canvas Scroll Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Loading Screen -->
+    <div id="loader" class="loader-container">
+        <div class="loader-content">
+            <div class="brand-logo">
+                <span class="brand-sub">Cadbury</span>
+                <h1 class="brand-title">Dairy Milk</h1>
+            </div>
+            <div class="loading-bar-wrapper">
+                <div id="loading-bar" class="loading-bar"></div>
+            </div>
+            <div id="loading-text" class="loading-text">Crafting Pure Indulgence... 0%</div>
+            <p class="loader-tip">Scroll or use scrub controls for high-speed playback</p>
+        </div>
+    </div>
+
+    <!-- Main Navigation Bar -->
+    <nav class="navbar glass">
+        <div class="nav-brand">
+            <span class="nav-logo-text">Dairy Milk</span>
+            <span class="nav-badge">Pure Milk Chocolate</span>
+        </div>
+        <div class="nav-actions">
+            <button id="sound-toggle" class="icon-btn glass-btn" title="Toggle Ambient Audio">
+                <i data-lucide="volume-x" id="sound-icon"></i>
+            </button>
+            <button id="fit-toggle" class="icon-btn glass-btn" title="Toggle View Fit (Cover/Contain)">
+                <i data-lucide="maximize-2" id="fit-icon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- FULL-SCREEN HERO SECTION WITH STICKY CANVAS -->
+    <div id="hero-experience" class="hero-experience-wrapper">
+        <!-- Sticky Canvas Viewport -->
+        <div class="sticky-canvas-container">
+            <canvas id="hero-canvas"></canvas>
+            
+            <!-- Subtle Glow & Premium Lighting -->
+            <div class="hero-ambient-glow"></div>
+            <div class="hero-gold-glow"></div>
+            <div class="canvas-overlay-vignette"></div>
+
+            <!-- Centered Overlay Text -->
+            <div id="hero-text-overlay" class="hero-text-overlay">
+                <div class="hero-text-card">
+                    <span class="hero-badge">A GLASS AND A HALF</span>
+                    <h1 class="hero-heading">CADBURY DAIRY MILK</h1>
+                    <p class="hero-subheading">
+                        Made with a glass and a half of fresh milk… It’s the classic creamy taste that’s unmistakably Cadbury.
+                    </p>
+                    <div class="hero-scroll-indicator">
+                        <span class="mouse-icon"><span class="wheel"></span></span>
+                        <span>Scroll to Experience the Melt</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SHOWCASE SECTIONS FROM CODE.HTML -->
+    <div class="relative z-10 bg-surface font-body-md text-body-md text-on-surface antialiased">
+        <!-- FLAVOUR VARIATION EXPLORATION GRID & FILTERS -->
+        <section class="w-full py-space-xl lg:py-margin bg-surface" id="flavour-catalogue">
+            <div class="max-w-7xl mx-auto px-6 lg:px-12">
+                <!-- Section Header -->
+                <div class="mb-space-lg">
+                    <span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold">Sensory Collection</span>
+                    <h2 class="font-headline-lg text-headline-lg text-on-surface mt-1">A World of Indulgent Flavours</h2>
+                    <p class="font-body-md text-body-md text-on-surface-variant mt-2 max-w-3xl">
+                        Filter by your favorite chocolate flavour profile and price range to uncover your signature melt.
+                    </p>
+                </div>
+
+                <!-- INTERACTIVE FLAVOUR & PRICE FILTER CONTROL PANEL -->
+                <div class="bg-surface-container-lowest/90 backdrop-blur-xl rounded-3xl p-6 md:p-8 mb-space-xl border border-white/10 shadow-2xl">
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+                        
+                        <!-- 1. Category Tabs -->
+                        <div class="md:col-span-6 flex flex-col gap-2">
+                            <span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold flex items-center gap-1.5">
+                                <span class="material-symbols-outlined text-[18px]">category</span>
+                                Flavour Category
+                            </span>
+                            <div class="flex flex-wrap items-center gap-2" id="flavourFilterContainer">
+                                <button class="px-4 py-2 rounded-full font-label-md text-label-md font-bold bg-secondary-container text-on-secondary-fixed shadow-sm filter-pill transition-all cursor-pointer" onclick="setCategoryFilter('all', this)">All Flavours</button>
+                                <button class="px-4 py-2 rounded-full font-label-md text-label-md font-medium bg-surface-container text-on-surface hover:bg-surface-container-high transition-all filter-pill cursor-pointer" onclick="setCategoryFilter('classic', this)">Classic &amp; Silk</button>
+                                <button class="px-4 py-2 rounded-full font-label-md text-label-md font-medium bg-surface-container text-on-surface hover:bg-surface-container-high transition-all filter-pill cursor-pointer" onclick="setCategoryFilter('nuts', this)">Nuts &amp; Crunch</button>
+                                <button class="px-4 py-2 rounded-full font-label-md text-label-md font-medium bg-surface-container text-on-surface hover:bg-surface-container-high transition-all filter-pill cursor-pointer" onclick="setCategoryFilter('caramel', this)">Caramel &amp; Filled</button>
+                            </div>
+                        </div>
+
+                        <!-- 2. Price Range Filter Slider -->
+                        <div class="md:col-span-3 flex flex-col gap-2">
+                            <div class="flex items-center justify-between">
+                                <span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold flex items-center gap-1.5">
+                                    <span class="material-symbols-outlined text-[18px]">payments</span>
+                                    Max Price
+                                </span>
+                                <span id="priceDisplay" class="font-label-md text-label-md font-bold text-secondary-container">$6.00</span>
+                            </div>
+                            <input type="range" id="priceRange" min="2.50" max="6.00" step="0.25" value="6.00" class="w-full accent-secondary-container bg-surface-container h-2 rounded-lg cursor-pointer" oninput="setPriceFilter(this.value)">
+                        </div>
+
+                        <!-- 3. Sort Selection -->
+                        <div class="md:col-span-3 flex flex-col gap-2">
+                            <span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold flex items-center gap-1.5">
+                                <span class="material-symbols-outlined text-[18px]">sort</span>
+                                Sort By
+                            </span>
+                            <select id="sortSelect" onchange="setSortOrder(this.value)" class="w-full bg-surface-container text-on-surface border border-white/10 rounded-xl px-4 py-2 text-sm font-medium focus:outline-none focus:border-secondary-container cursor-pointer">
+                                <option value="default">Featured Selection</option>
+                                <option value="price-asc">Price: Low to High</option>
+                                <option value="price-desc">Price: High to Low</option>
+                                <option value="rating">Top Rated</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Filter Summary & Reset Bar -->
+                    <div class="mt-6 pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-3 text-xs text-on-surface-variant">
+                        <div class="flex items-center gap-2">
+                            <span id="activeFilterBadge" class="bg-secondary-container/20 text-secondary-container font-bold px-3 py-1 rounded-full">All Items</span>
+                            <span id="resultsCount">8 products available</span>
+                        </div>
+                        <button onclick="resetFilters()" class="text-secondary-container hover:underline font-bold flex items-center gap-1 cursor-pointer">
+                            <span class="material-symbols-outlined text-[15px]">refresh</span>
+                            Reset All Filters
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Products Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-lg" id="productsGrid">
+                    <!-- Product 1: Classic Dairy Milk -->
+                    <div class="flavour-card flex flex-col bg-surface-container-lowest rounded-2xl p-space-md shadow-[0_4px_20px_-2px_rgba(29,0,71,0.06)] hover:shadow-[0_12px_32px_-4px_rgba(29,0,71,0.15)] transition-all duration-300" data-category="classic" data-price="3.80" data-rating="4.9">
+                        <div class="relative w-full aspect-square rounded-xl overflow-hidden bg-primary-container/5 mb-space-md flex items-center justify-center">
+                            <span class="absolute top-3 left-3 bg-primary-container text-on-primary font-label-sm text-label-sm px-2.5 py-1 rounded-full shadow-sm z-10">Bestseller</span>
+                            <button aria-label="Add to wishlist" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-surface/80 backdrop-blur-md text-on-surface hover:text-error flex items-center justify-center transition-colors z-10 shadow-sm">
+                                <span class="material-symbols-outlined text-[18px]">favorite</span>
+                            </button>
+                            <img class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500" data-alt="Classic Cadbury Dairy Milk chocolate bar pack" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBp9cGSEaC43uWLBAUmqs4jOeaVjY3gRUDD_V3H3DTwI8QIRV0w2YQQjqt11Ho7NhdAznDJ0r-tPyb4fFJCCwCkgNgugt4twVmQTcXsQCKMOKXcEGg1Un03o8eMYjLHbmZVHfJG9i19r6G9705ugrzOoelCnqZ4xiJyLZMKPKkxJRtjXQVP7hJG-7nv7sL3c1Q3SYl_RbS6W0l2_gQ8GYWyeSe96zWBkGI3QsZyJZrfqTrqhCMxi93plQ"/>
+                        </div>
+                        <div class="flex items-center justify-between text-secondary-container mb-1">
+                            <div class="flex items-center gap-1 font-label-sm text-label-sm font-bold text-on-surface">
+                                <span class="material-symbols-outlined text-[16px] text-secondary-container" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span>4.9</span>
+                                <span class="text-on-surface-variant font-normal">(12.4k)</span>
+                            </div>
+                            <span class="font-label-sm text-label-sm text-on-surface-variant font-bold">180g Original</span>
+                        </div>
+                        <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold leading-snug">Classic Dairy Milk</h3>
+                        <p class="font-body-sm text-body-sm text-on-surface-variant mt-1 line-clamp-2">The beloved signature recipe: velvety fresh milk chocolate with unforgettable cocoa warmth.</p>
+                        <div class="flex flex-wrap gap-1.5 mt-space-sm mb-space-md">
+                            <span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-[10px]">Silky Melt</span>
+                            <span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-[10px]">Fresh Milk</span>
+                            <span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-[10px]">Pure Joy</span>
+                        </div>
+                        <div class="mt-auto pt-space-sm flex items-center justify-between">
+                            <div>
+                                <span class="font-headline-sm text-headline-sm text-primary-container font-bold">$3.80</span>
+                                <span class="font-body-sm text-[11px] text-on-surface-variant block">$2.11 / 100g</span>
+                            </div>
+                            <button class="px-space-md py-space-xs rounded-full bg-secondary-container text-on-secondary-fixed hover:bg-secondary-fixed font-label-sm text-label-sm font-bold flex items-center gap-1 shadow-sm transition-transform active:scale-95 cursor-pointer" onclick="addToCart('Classic Dairy Milk', '$3.80')">
+                                <span class="material-symbols-outlined text-[16px]">add_shopping_cart</span>
+                                <span>Add</span>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Product 2: Dairy Milk Fruit & Nut -->
+                    <div class="flavour-card flex flex-col bg-surface-container-lowest rounded-2xl p-space-md shadow-[0_4px_20px_-2px_rgba(29,0,71,0.06)] hover:shadow-[0_12px_32px_-4px_rgba(29,0,71,0.15)] transition-all duration-300" data-category="nuts" data-price="4.20" data-rating="4.8">
+                        <div class="relative w-full aspect-square rounded-xl overflow-hidden bg-primary-container/5 mb-space-md flex items-center justify-center">
+                            <span class="absolute top-3 left-3 bg-secondary-container text-on-secondary-fixed font-label-sm text-label-sm px-2.5 py-1 rounded-full shadow-sm z-10">Favourite</span>
+                            <button aria-label="Add to wishlist" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-surface/80 backdrop-blur-md text-on-surface hover:text-error flex items-center justify-center transition-colors z-10 shadow-sm">
+                                <span class="material-symbols-outlined text-[18px]">favorite</span>
+                            </button>
+                            <img alt="Dairy Milk Fruit and Nut" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlBbk-D2PW2XMKJyu9TT6nR9F4Pfh_gAX9evL-ZHmb-fFPeBaVB9FIiRnxMGsgA9yqnllRrLi5cXXGdYgP8SWWNAJfMl_mwl3McUG_t32Z5S7cjFAWaajT1sd-xroxoAzXboXThsRDSiD-_7QmDLpvVxVYXiyqWssm5QMLYpc_G5dwO3JonDAFO20oN5ChQ-kVnFZiKt6ckVBzk1uNCHqGoFtTJKObh8a8OIB8DTuGww35C2q0Lh9Wnw"/>
+                        </div>
+                        <div class="flex items-center justify-between text-secondary-container mb-1">
+                            <div class="flex items-center gap-1 font-label-sm text-label-sm font-bold text-on-surface">
+                                <span class="material-symbols-outlined text-[16px] text-secondary-container" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span>4.8</span>
+                                <span class="text-on-surface-variant font-normal">(8.2k)</span>
+                            </div>
+                            <span class="font-label-sm text-label-sm text-on-surface-variant font-bold">110g Bar</span>
+                        </div>
+                        <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold leading-snug">Fruit &amp; Nut</h3>
+                        <p class="font-body-sm text-body-sm text-on-surface-variant mt-1 line-clamp-2">Plump sun-dried golden raisins paired with whole crunchy California almonds in creamy chocolate.</p>
+                        <div class="flex flex-wrap gap-1.5 mt-space-sm mb-space-md">
+                            <span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-[10px]">Chewy Raisins</span>
+                            <span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-[10px]">Nutty Crunch</span>
+                        </div>
+                        <div class="mt-auto pt-space-sm flex items-center justify-between">
+                            <div>
+                                <span class="font-headline-sm text-headline-sm text-primary-container font-bold">$4.20</span>
+                                <span class="font-body-sm text-[11px] text-on-surface-variant block">$3.81 / 100g</span>
+                            </div>
+                            <button class="px-space-md py-space-xs rounded-full bg-secondary-container text-on-secondary-fixed hover:bg-secondary-fixed font-label-sm text-label-sm font-bold flex items-center gap-1 shadow-sm transition-transform active:scale-95 cursor-pointer" onclick="addToCart('Fruit &amp; Nut', '$4.20')">
+                                <span class="material-symbols-outlined text-[16px]">add_shopping_cart</span>
+                                <span>Add</span>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Product 3: Roast Almond -->
+                    <div class="flavour-card flex flex-col bg-surface-container-lowest rounded-2xl p-space-md shadow-[0_4px_20px_-2px_rgba(29,0,71,0.06)] hover:shadow-[0_12px_32px_-4px_rgba(29,0,71,0.15)] transition-all duration-300" data-category="nuts" data-price="4.50" data-rating="4.9">
+                        <div class="relative w-full aspect-square rounded-xl overflow-hidden bg-primary-container/5 mb-space-md flex items-center justify-center">
+                            <span class="absolute top-3 left-3 bg-surface-container-high text-on-surface font-label-sm text-label-sm px-2.5 py-1 rounded-full shadow-sm z-10">Crisp Crunch</span>
+                            <button aria-label="Add to wishlist" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-surface/80 backdrop-blur-md text-on-surface hover:text-error flex items-center justify-center transition-colors z-10 shadow-sm">
+                                <span class="material-symbols-outlined text-[18px]">favorite</span>
+                            </button>
+                            <img alt="Dairy Milk Roast Almond" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbPrbwqn_Zg9kX-bDuxQMldj0PNoEdwcZdNWjN-hoFi7e6z1ItkiRlKI1zFVruCN9TXpQbOHqKgrwjIFd69XMvOSqFjxU8q4jmAkWqCSkkKkxuRd6cxVHVGc3vnKm_VxJq08234SRaIF7HFgj2dOtn67rdz1TCRZr8W8jR1XrbP_tjMpYQd6rCnxffjFp-RbQnFo39A1bdKEy3c_qhhC3mlKLsfIyb86OF62rnxpfFKY5YuOUaR3rYPw"/>
+                        </div>
+                        <div class="flex items-center justify-between text-secondary-container mb-1">
+                            <div class="flex items-center gap-1 font-label-sm text-label-sm font-bold text-on-surface">
+                                <span class="material-symbols-outlined text-[16px] text-secondary-container" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span>4.9</span>
+                                <span class="text-on-surface-variant font-normal">(6.7k)</span>
+                            </div>
+                            <span class="font-label-sm text-label-sm text-on-surface-variant font-bold">180g Share Bar</span>
+                        </div>
+                        <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold leading-snug">Roast Almond</h3>
+                        <p class="font-body-sm text-body-sm text-on-surface-variant mt-1 line-clamp-2">Slow-roasted whole golden almonds enveloped in luxurious layers of velvety milk chocolate.</p>
+                        <div class="flex flex-wrap gap-1.5 mt-space-sm mb-space-md">
+                            <span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-[10px]">Slow Toasted</span>
+                            <span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-[10px]">Crisp Snap</span>
+                        </div>
+                        <div class="mt-auto pt-space-sm flex items-center justify-between">
+                            <div>
+                                <span class="font-headline-sm text-headline-sm text-primary-container font-bold">$4.50</span>
+                                <span class="font-body-sm text-[11px] text-on-surface-variant block">$2.50 / 100g</span>
+                            </div>
+                            <button class="px-space-md py-space-xs rounded-full bg-secondary-container text-on-secondary-fixed hover:bg-secondary-fixed font-label-sm text-label-sm font-bold flex items-center gap-1 shadow-sm transition-transform active:scale-95 cursor-pointer" onclick="addToCart('Roast Almond', '$4.50')">
+                                <span class="material-symbols-outlined text-[16px]">add_shopping_cart</span>
+                                <span>Add</span>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Product 4: Silk Caramello -->
+                    <div class="flavour-card flex flex-col bg-surface-container-lowest rounded-2xl p-space-md shadow-[0_4px_20px_-2px_rgba(29,0,71,0.06)] hover:shadow-[0_12px_32px_-4px_rgba(29,0,71,0.15)] transition-all duration-300" data-category="caramel" data-price="4.80" data-rating="5.0">
+                        <div class="relative w-full aspect-square rounded-xl overflow-hidden bg-primary-container/5 mb-space-md flex items-center justify-center">
+                            <span class="absolute top-3 left-3 bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm px-2.5 py-1 rounded-full shadow-sm z-10 font-bold">Ultra Luxury</span>
+                            <button aria-label="Add to wishlist" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-surface/80 backdrop-blur-md text-on-surface hover:text-error flex items-center justify-center transition-colors z-10 shadow-sm">
+                                <span class="material-symbols-outlined text-[18px]">favorite</span>
+                            </button>
+                            <img alt="Dairy Milk Silk Caramello" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuiGfGnqByTepbMF6W-1OQ5xQlv_X9GEWB8DbJ9G4viI0LX05GV5Rqp4eAN30D_OkqwzClDDYUYi25jviSp3ao0Gt_2kk5nJc9fqjKAVbTrE59TBvn01c2juw-gKxxkvUJOXWUIXgkfaYtsMwKXO_AL4UR_d_o3JsofsVw4aJgbN4Mo4h6Sb9uhE29uHyu9bTagkRr_6cQ9GiaidgBnZMxCfmbykh7SXO7JYyL8qtYXyomnKp7JUZtZQ"/>
+                        </div>
+                        <div class="flex items-center justify-between text-secondary-container mb-1">
+                            <div class="flex items-center gap-1 font-label-sm text-label-sm font-bold text-on-surface">
+                                <span class="material-symbols-outlined text-[16px] text-secondary-container" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span>5.0</span>
+                                <span class="text-on-surface-variant font-normal">(9.9k)</span>
+                            </div>
+                            <span class="font-label-sm text-label-sm text-on-surface-variant font-bold">150g Silk</span>
+                        </div>
+                        <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold leading-snug">Silk Caramello</h3>
+                        <p class="font-body-sm text-body-sm text-on-surface-variant mt-1 line-clamp-2">Lush, slow-dripping golden caramel encased inside softer, melt-on-the-tongue Silk chocolate.</p>
+                        <div class="flex flex-wrap gap-1.5 mt-space-sm mb-space-md">
+                            <span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-[10px]">Gooey Caramel</span>
+                            <span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-[10px]">Silk Blend</span>
+                        </div>
+                        <div class="mt-auto pt-space-sm flex items-center justify-between">
+                            <div>
+                                <span class="font-headline-sm text-headline-sm text-primary-container font-bold">$4.80</span>
+                                <span class="font-body-sm text-[11px] text-on-surface-variant block">$3.20 / 100g</span>
+                            </div>
+                            <button class="px-space-md py-space-xs rounded-full bg-secondary-container text-on-secondary-fixed hover:bg-secondary-fixed font-label-sm text-label-sm font-bold flex items-center gap-1 shadow-sm transition-transform active:scale-95 cursor-pointer" onclick="addToCart('Silk Caramello', '$4.80')">
+                                <span class="material-symbols-outlined text-[16px]">add_shopping_cart</span>
+                                <span>Add</span>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Product 5: Silk Hazelnut -->
+                    <div class="flavour-card flex flex-col bg-surface-container-lowest rounded-2xl p-space-md shadow-[0_4px_20px_-2px_rgba(29,0,71,0.06)] hover:shadow-[0_12px_32px_-4px_rgba(29,0,71,0.15)] transition-all duration-300" data-category="nuts" data-price="5.20" data-rating="4.9">
+                        <div class="relative w-full aspect-square rounded-xl overflow-hidden bg-primary-container/5 mb-space-md flex items-center justify-center">
+                            <span class="absolute top-3 left-3 bg-secondary-container text-on-secondary-fixed font-label-sm text-label-sm px-2.5 py-1 rounded-full shadow-sm z-10 font-bold">Gourmet</span>
+                            <button aria-label="Add to wishlist" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-surface/80 backdrop-blur-md text-on-surface hover:text-error flex items-center justify-center transition-colors z-10 shadow-sm">
+                                <span class="material-symbols-outlined text-[18px]">favorite</span>
+                            </button>
+                            <img alt="Dairy Milk Silk Hazelnut" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCwLgFo_uh_aHwmP-k6O7HcgJuPxG3VsoyEieZYwlZz_6Cqm__7paejn0g-dejFeI9MOXABaJvh9Qqa5QYzuFpJnhZAlgn1qHs3Ir42mE9ODLYzrQAVFR0V2mir9d81k1JUl7zeRYHjkkQXDEx2_o9dqIp3DqInkuAxMe3iXD-5eEMuglT5V_JHkGYaHYcC0nt8n9tlE1nhpOiVyOzwEKJZUZt7YzKGX-wu2JpQGxcXJ_bMN04aw4szw"/>
+                        </div>
+                        <div class="flex items-center justify-between text-secondary-container mb-1">
+                            <div class="flex items-center gap-1 font-label-sm text-label-sm font-bold text-on-surface">
+                                <span class="material-symbols-outlined text-[16px] text-secondary-container" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span>4.9</span>
+                                <span class="text-on-surface-variant font-normal">(7.4k)</span>
+                            </div>
+                            <span class="font-label-sm text-label-sm text-on-surface-variant font-bold">143g Silk</span>
+                        </div>
+                        <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold leading-snug">Silk Whole Hazelnut</h3>
+                        <p class="font-body-sm text-body-sm text-on-surface-variant mt-1 line-clamp-2">Whole Turkish hazelnuts enveloped in smooth, ultra-creamy Silk milk chocolate.</p>
+                        <div class="flex flex-wrap gap-1.5 mt-space-sm mb-space-md">
+                            <span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-[10px]">Whole Nuts</span>
+                            <span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-[10px]">Silky Blend</span>
+                        </div>
+                        <div class="mt-auto pt-space-sm flex items-center justify-between">
+                            <div>
+                                <span class="font-headline-sm text-headline-sm text-primary-container font-bold">$5.20</span>
+                                <span class="font-body-sm text-[11px] text-on-surface-variant block">$3.63 / 100g</span>
+                            </div>
+                            <button class="px-space-md py-space-xs rounded-full bg-secondary-container text-on-secondary-fixed hover:bg-secondary-fixed font-label-sm text-label-sm font-bold flex items-center gap-1 shadow-sm transition-transform active:scale-95 cursor-pointer" onclick="addToCart('Silk Hazelnut', '$5.20')">
+                                <span class="material-symbols-outlined text-[16px]">add_shopping_cart</span>
+                                <span>Add</span>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Product 6: Butterscotch Crackle -->
+                    <div class="flavour-card flex flex-col bg-surface-container-lowest rounded-2xl p-space-md shadow-[0_4px_20px_-2px_rgba(29,0,71,0.06)] hover:shadow-[0_12px_32px_-4px_rgba(29,0,71,0.15)] transition-all duration-300" data-category="caramel" data-price="3.40" data-rating="4.7">
+                        <div class="relative w-full aspect-square rounded-xl overflow-hidden bg-primary-container/5 mb-space-md flex items-center justify-center">
+                            <span class="absolute top-3 left-3 bg-primary-container text-on-primary font-label-sm text-label-sm px-2.5 py-1 rounded-full shadow-sm z-10">Sweet Crackle</span>
+                            <button aria-label="Add to wishlist" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-surface/80 backdrop-blur-md text-on-surface hover:text-error flex items-center justify-center transition-colors z-10 shadow-sm">
+                                <span class="material-symbols-outlined text-[18px]">favorite</span>
+                            </button>
+                            <img alt="Dairy Milk Butterscotch Crackle" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhXQlXJSFr7FoEBLWnJTJVwaOHG1gTE9O0Ly2gwxPnRjEEMFbPW9QP1L_4s8V4QQdkvnbbWWLp32X_f04j0jvNEu0j0Cw7-GXUoBiX37ueCm4OLb4NFePp9kiILuBfqaKptlzc8E5odpDdT-VzmAKWtxpW8qr5i68nZ29Ojt7dh2TEFseF9RrMK3HPFKgPHqF7n9BPIUVK-SQnW8T2dkWsZVvUWD_ngqSJ7Z5l_05fnV3izfRDsUul7Q"/>
+                        </div>
+                        <div class="flex items-center justify-between text-secondary-container mb-1">
+                            <div class="flex items-center gap-1 font-label-sm text-label-sm font-bold text-on-surface">
+                                <span class="material-symbols-outlined text-[16px] text-secondary-container" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span>4.7</span>
+                                <span class="text-on-surface-variant font-normal">(5.1k)</span>
+                            </div>
+                            <span class="font-label-sm text-label-sm text-on-surface-variant font-bold">110g Bar</span>
+                        </div>
+                        <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold leading-snug">Butterscotch Crackle</h3>
+                        <p class="font-body-sm text-body-sm text-on-surface-variant mt-1 line-clamp-2">Crispy golden butterscotch crystals embedded in signature Dairy Milk chocolate.</p>
+                        <div class="flex flex-wrap gap-1.5 mt-space-sm mb-space-md">
+                            <span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-[10px]">Butterscotch</span>
+                            <span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-[10px]">Sweet Crunch</span>
+                        </div>
+                        <div class="mt-auto pt-space-sm flex items-center justify-between">
+                            <div>
+                                <span class="font-headline-sm text-headline-sm text-primary-container font-bold">$3.40</span>
+                                <span class="font-body-sm text-[11px] text-on-surface-variant block">$3.09 / 100g</span>
+                            </div>
+                            <button class="px-space-md py-space-xs rounded-full bg-secondary-container text-on-secondary-fixed hover:bg-secondary-fixed font-label-sm text-label-sm font-bold flex items-center gap-1 shadow-sm transition-transform active:scale-95 cursor-pointer" onclick="addToCart('Butterscotch Crackle', '$3.40')">
+                                <span class="material-symbols-outlined text-[16px]">add_shopping_cart</span>
+                                <span>Add</span>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Product 7: Silk Bubbly -->
+                    <div class="flavour-card flex flex-col bg-surface-container-lowest rounded-2xl p-space-md shadow-[0_4px_20px_-2px_rgba(29,0,71,0.06)] hover:shadow-[0_12px_32px_-4px_rgba(29,0,71,0.15)] transition-all duration-300" data-category="classic" data-price="4.60" data-rating="4.9">
+                        <div class="relative w-full aspect-square rounded-xl overflow-hidden bg-primary-container/5 mb-space-md flex items-center justify-center">
+                            <span class="absolute top-3 left-3 bg-secondary-container text-on-secondary-fixed font-label-sm text-label-sm px-2.5 py-1 rounded-full shadow-sm z-10 font-bold">Aerated Silk</span>
+                            <button aria-label="Add to wishlist" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-surface/80 backdrop-blur-md text-on-surface hover:text-error flex items-center justify-center transition-colors z-10 shadow-sm">
+                                <span class="material-symbols-outlined text-[18px]">favorite</span>
+                            </button>
+                            <img alt="Dairy Milk Silk Bubbly" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBw6T0eU60WVPYUMf7De8ZAospWkY1lN2KOc0cLVpFEGvLuIECyI4j2Br50IFcvb2wyoo3MBVytlNs_Rt2gtBYjCfsw_PcdvsKJBucOSMLjJkwW3E6E2XkZ2JKMO359mBa1gfhvpsZk7KynXsfEM1tpo712qdu7bf2StFey9zjhHeZGfllCZP1_eemgMILN93EDFkbv9R9xz1Wk51UtCYXoxE5fa3R2mpAtVUW-mZzTmkgTpRIe8a-W8A"/>
+                        </div>
+                        <div class="flex items-center justify-between text-secondary-container mb-1">
+                            <div class="flex items-center gap-1 font-label-sm text-label-sm font-bold text-on-surface">
+                                <span class="material-symbols-outlined text-[16px] text-secondary-container" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span>4.9</span>
+                                <span class="text-on-surface-variant font-normal">(11.0k)</span>
+                            </div>
+                            <span class="font-label-sm text-label-sm text-on-surface-variant font-bold">120g Silk</span>
+                        </div>
+                        <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold leading-snug">Silk Bubbly</h3>
+                        <p class="font-body-sm text-body-sm text-on-surface-variant mt-1 line-clamp-2">Unique bubble texture filled with soft aerated chocolate pockets that pop softly on your palate.</p>
+                        <div class="flex flex-wrap gap-1.5 mt-space-sm mb-space-md">
+                            <span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-[10px]">Air Bubbles</span>
+                            <span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-[10px]">Soft Melt</span>
+                        </div>
+                        <div class="mt-auto pt-space-sm flex items-center justify-between">
+                            <div>
+                                <span class="font-headline-sm text-headline-sm text-primary-container font-bold">$4.60</span>
+                                <span class="font-body-sm text-[11px] text-on-surface-variant block">$3.83 / 100g</span>
+                            </div>
+                            <button class="px-space-md py-space-xs rounded-full bg-secondary-container text-on-secondary-fixed hover:bg-secondary-fixed font-label-sm text-label-sm font-bold flex items-center gap-1 shadow-sm transition-transform active:scale-95 cursor-pointer" onclick="addToCart('Silk Bubbly', '$4.60')">
+                                <span class="material-symbols-outlined text-[16px]">add_shopping_cart</span>
+                                <span>Add</span>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Product 8: Marvelous Creations -->
+                    <div class="flavour-card flex flex-col bg-surface-container-lowest rounded-2xl p-space-md shadow-[0_4px_20px_-2px_rgba(29,0,71,0.06)] hover:shadow-[0_12px_32px_-4px_rgba(29,0,71,0.15)] transition-all duration-300" data-category="caramel" data-price="2.90" data-rating="4.6">
+                        <div class="relative w-full aspect-square rounded-xl overflow-hidden bg-primary-container/5 mb-space-md flex items-center justify-center">
+                            <span class="absolute top-3 left-3 bg-primary-container text-on-primary font-label-sm text-label-sm px-2.5 py-1 rounded-full shadow-sm z-10">Jelly &amp; Popping</span>
+                            <button aria-label="Add to wishlist" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-surface/80 backdrop-blur-md text-on-surface hover:text-error flex items-center justify-center transition-colors z-10 shadow-sm">
+                                <span class="material-symbols-outlined text-[18px]">favorite</span>
+                            </button>
+                            <img alt="Dairy Milk Marvelous Creations" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1c-kt08ym9UUNePRH9VANtyBIr_0yJms6zRAgDKkhkjc_lNYC8kqIXK-6x9jrv6HXKrPqrjgxZojpY-uhi7p0jR9yhtzHcjrPNASWctXWterBjMj360Sg87QbdpgxqYKRk_1nqrIS_Zh4cfyiAc_OPSuRV03gKpcRmQlBVeJXJ6ro3Zjr-Fk6riGnh68u2A-k8A7ZJG5YABZQvj9FBGHHHWIl3q7gKB70-F99oVG62h5aBJuwNIqiyg"/>
+                        </div>
+                        <div class="flex items-center justify-between text-secondary-container mb-1">
+                            <div class="flex items-center gap-1 font-label-sm text-label-sm font-bold text-on-surface">
+                                <span class="material-symbols-outlined text-[16px] text-secondary-container" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span>4.6</span>
+                                <span class="text-on-surface-variant font-normal">(4.3k)</span>
+                            </div>
+                            <span class="font-label-sm text-label-sm text-on-surface-variant font-bold">100g Bar</span>
+                        </div>
+                        <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold leading-snug">Jelly Popping Candy</h3>
+                        <p class="font-body-sm text-body-sm text-on-surface-variant mt-1 line-clamp-2">Playful mix of chewy fruit jellies, cocoa bean drops, and energetic popping candy.</p>
+                        <div class="flex flex-wrap gap-1.5 mt-space-sm mb-space-md">
+                            <span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-[10px]">Fruity Jellies</span>
+                            <span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-[10px]">Pop Candy</span>
+                        </div>
+                        <div class="mt-auto pt-space-sm flex items-center justify-between">
+                            <div>
+                                <span class="font-headline-sm text-headline-sm text-primary-container font-bold">$2.90</span>
+                                <span class="font-body-sm text-[11px] text-on-surface-variant block">$2.90 / 100g</span>
+                            </div>
+                            <button class="px-space-md py-space-xs rounded-full bg-secondary-container text-on-secondary-fixed hover:bg-secondary-fixed font-label-sm text-label-sm font-bold flex items-center gap-1 shadow-sm transition-transform active:scale-95 cursor-pointer" onclick="addToCart('Jelly Popping Candy', '$2.90')">
+                                <span class="material-symbols-outlined text-[16px]">add_shopping_cart</span>
+                                <span>Add</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- THE "GLASS AND A HALF" HERITAGE & QUALITY FEATURE -->
+        <section class="w-full py-space-xl lg:py-margin bg-surface-container-low text-on-surface" id="heritage-story">
+            <div class="max-w-7xl mx-auto px-6 lg:px-12">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
+                    <div class="lg:col-span-6 relative">
+                        <div class="relative rounded-3xl overflow-hidden shadow-[0_12px_32px_-4px_rgba(29,0,71,0.12)] bg-surface-container-lowest p-space-lg">
+                            <div class="relative h-96 w-full rounded-2xl overflow-hidden mb-space-md">
+                                <img class="w-full h-full object-cover" data-alt="Close up artisanal chocolate conching and pouring into gleaming molds with warm milk glass carafes and fresh cocoa pods on historic oak table, Bournville confectionery heritage aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKd6j9nkYJ7XHDqtGVZVGOCaQD859X4_EPR8Hja8kas12C2R2Y6URp8BsiabNKh9fpySqSHTSyeWL4GlhmpaZLJWMhnWRgYQXqqShdEG4EuALQr89dvio9ngJGFkFnN8sLt-mgHywhpRrFVtkyFm-ywK-lOw_0s3uvMBKVZnYZkfLU8WWlhDWDX-aT0YUccSqzY_XdQS7GSPvr-qD9RipqxEXQ_cGzSmxXr5ZhgUal0EZVAKb8T7jZUQ"/>
+                                <div class="absolute inset-0 bg-gradient-to-t from-primary-container/80 via-transparent to-transparent"></div>
+                                <div class="absolute bottom-6 left-6 right-6 text-on-primary">
+                                    <span class="font-label-sm text-label-sm text-secondary-container uppercase tracking-wider font-bold">Bournville Village Heritage</span>
+                                    <p class="font-headline-sm text-headline-sm font-bold mt-1">Confectionery Crafted with Heart &amp; Generosity</p>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-3 gap-space-sm pt-space-xs text-center">
+                                <div class="p-space-sm rounded-xl bg-surface-container">
+                                    <span class="material-symbols-outlined text-secondary text-[24px]">water_full</span>
+                                    <p class="font-label-sm text-label-sm text-on-surface-variant mt-1">Milk Density</p>
+                                    <p class="font-title-lg text-title-lg text-on-surface font-bold">1½ Glasses</p>
+                                </div>
+                                <div class="p-space-sm rounded-xl bg-surface-container">
+                                    <span class="material-symbols-outlined text-secondary text-[24px]">nest_clock_farsight_analog</span>
+                                    <p class="font-label-sm text-label-sm text-on-surface-variant mt-1">Conch Time</p>
+                                    <p class="font-title-lg text-title-lg text-on-surface font-bold">24 Hours</p>
+                                </div>
+                                <div class="p-space-sm rounded-xl bg-surface-container">
+                                    <span class="material-symbols-outlined text-secondary text-[24px]">verified</span>
+                                    <p class="font-label-sm text-label-sm text-on-surface-variant mt-1">Cocoa Life</p>
+                                    <p class="font-title-lg text-title-lg text-on-surface font-bold">100% Valid</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-6 flex flex-col space-y-space-md">
+                        <span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold">The Golden Standard</span>
+                        <h2 class="font-headline-lg text-headline-lg text-on-surface">The Glass and a Half Difference</h2>
+                        <p class="font-body-md text-body-md text-on-surface-variant">
+                            In 1905, Cadbury set out to craft a bar of milk chocolate richer, silkier, and far more generous than anything Europe had ever tasted. That single promise continues to guide every block we pour.
+                        </p>
+                        <div class="space-y-space-sm pt-space-xs">
+                            <div class="flex items-start gap-space-md p-space-md rounded-2xl bg-surface-container-lowest shadow-[0_2px_12px_rgba(0,0,0,0.03)] hover:shadow-md transition-shadow">
+                                <div class="w-12 h-12 rounded-xl bg-primary-container text-on-primary flex items-center justify-center shrink-0">
+                                    <span class="material-symbols-outlined text-[24px]">local_drink</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-title-lg text-title-lg text-on-surface font-bold">1.5 Glasses of Fresh Milk</h4>
+                                    <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                                        Every 200g of chocolate uses real liquid fresh milk rather than dry powder, creating our distinctive creamy mouthfeel and smooth aftertaste.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-space-md p-space-md rounded-2xl bg-surface-container-lowest shadow-[0_2px_12px_rgba(0,0,0,0.03)] hover:shadow-md transition-shadow">
+                                <div class="w-12 h-12 rounded-xl bg-secondary-container text-on-secondary-fixed flex items-center justify-center shrink-0">
+                                    <span class="material-symbols-outlined text-[24px]">spa</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-title-lg text-title-lg text-on-surface font-bold">100% Sustainably Sourced Cocoa Life</h4>
+                                    <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                                        We invest directly into cocoa farming cooperatives, safeguarding tropical forests and empowering over 200,000 farming families worldwide.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-space-md p-space-md rounded-2xl bg-surface-container-lowest shadow-[0_2px_12px_rgba(0,0,0,0.03)] hover:shadow-md transition-shadow">
+                                <div class="w-12 h-12 rounded-xl bg-surface-tint text-on-primary flex items-center justify-center shrink-0">
+                                    <span class="material-symbols-outlined text-[24px]">auto_fix_high</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-title-lg text-title-lg text-on-surface font-bold">Precision Temperature Conching</h4>
+                                    <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                                        Meticulous agitation ensures chocolate particles measure under 20 microns, creating an effortless melt at human body temperature.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BUNDLES & GIFTING EXPERIENCES -->
+        <section class="w-full py-space-xl lg:py-margin bg-surface">
+            <div class="max-w-7xl mx-auto px-6 lg:px-12">
+                <div class="text-center max-w-3xl mx-auto mb-space-xl">
+                    <span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold">Share The Generosity</span>
+                    <h2 class="font-headline-lg text-headline-lg text-on-surface mt-1">Curated Gift Boxes &amp; Hampers</h2>
+                    <p class="font-body-md text-body-md text-on-surface-variant mt-2">
+                        From birthday surprises to festive family reunions, gift the timeless indulgence of Cadbury with personalised touches and luxury velvet gift ribbons.
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg mb-space-xl">
+                    <!-- Hamper 1 -->
+                    <div class="flex flex-col bg-surface-container-lowest rounded-2xl overflow-hidden shadow-[0_4px_20px_-2px_rgba(29,0,71,0.06)] hover:shadow-[0_12px_32px_-4px_rgba(29,0,71,0.12)] transition-all">
+                        <div class="relative h-60 w-full overflow-hidden bg-surface-container">
+                            <img class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500" data-alt="Luxury Cadbury Dairy Milk discovery hamper gift basket" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAv6-iGRVpu1fhdUSVqFoIWJ5gLBVoc-gPBNjChcDDzFLUxgY2SfREBbX9v519Qg9a_NQIZBXnmuLStZjOOi0DoFEpPQk4hyHcbYYrpHAmAQjo1Sv-AKA-YdPA3zMKsu6pBjgMpZHiB3USYV1o1uc45WDTx3zHR-LLjHdG-ZX3b50PH4PraabcX-SWxO-pZaqypSEL9K0O9jtDTa_F_8EoJotGAI5tUB7us5Lcw3NAm20aDpAwQONYrTA"/>
+                            <span class="absolute top-4 right-4 bg-primary-container text-on-primary font-label-sm text-label-sm px-3 py-1 rounded-full font-bold">8 Full Bars</span>
+                        </div>
+                        <div class="p-space-lg flex-1 flex flex-col">
+                            <h3 class="font-title-lg text-title-lg text-on-surface font-bold">The Ultimate Flavour Discovery Box</h3>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant mt-2">
+                                Every iconic taste in one deluxe box: Classic, Fruit &amp; Nut, Roast Almond, Caramello, Crackle, Hazelnut, and Silk Delights.
+                            </p>
+                            <div class="mt-auto pt-space-lg flex items-center justify-between">
+                                <div>
+                                    <span class="font-headline-sm text-headline-sm text-on-surface font-bold">$28.50</span>
+                                    <span class="font-body-sm text-[11px] text-secondary font-bold block">Free Gift Wrapping</span>
+                                </div>
+                                <button class="px-space-md py-space-xs rounded-full bg-secondary-container text-on-secondary-fixed hover:bg-secondary-fixed font-label-sm text-label-sm font-bold flex items-center gap-1 cursor-pointer" onclick="addToCart('Ultimate Discovery Box', '$28.50')">
+                                    <span>Select Hamper</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Hamper 2 -->
+                    <div class="flex flex-col bg-surface-container-lowest rounded-2xl overflow-hidden shadow-[0_12px_32px_-4px_rgba(29,0,71,0.14)] relative">
+                        <div class="bg-primary-container text-secondary-container text-center py-1.5 font-label-sm text-label-sm font-bold tracking-wide">
+                            POPULAR CELEBRATION GIFT
+                        </div>
+                        <div class="relative h-60 w-full overflow-hidden bg-surface-container">
+                            <img class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500" data-alt="Deep royal purple luxury chocolate gift box" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhXQlXJSFr7FoEBLWnJTJVwaOHG1gTE9O0Ly2gwxPnRjEEMFbPW9QP1L_4s8V4QQdkvnbbWWLp32X_f04j0jvNEu0j0Cw7-GXUoBiX37ueCm4OLb4NFePp9kiILuBfqaKptlzc8E5odpDdT-VzmAKWtxpW8qr5i68nZ29Ojt7dh2TEFseF9RrMK3HPFKgPHqF7n9BPIUVK-SQnW8T2dkWsZVvUWD_ngqSJ7Z5l_05fnV3izfRDsUul7Q"/>
+                            <span class="absolute top-4 right-4 bg-secondary-container text-on-secondary-fixed font-label-sm text-label-sm px-3 py-1 rounded-full font-bold">Velvet Edition</span>
+                        </div>
+                        <div class="p-space-lg flex-1 flex flex-col">
+                            <h3 class="font-title-lg text-title-lg text-on-surface font-bold">Silk Velvet Luxury Gift Box</h3>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant mt-2">
+                                Features 5 Silk signature bars, gold-dusted chocolate pralines, and a bespoke handwritten embossed calligraphy gift card.
+                            </p>
+                            <div class="mt-auto pt-space-lg flex items-center justify-between">
+                                <div>
+                                    <span class="font-headline-sm text-headline-sm text-on-surface font-bold">$34.00</span>
+                                    <span class="font-body-sm text-[11px] text-secondary font-bold block">Free Message Card</span>
+                                </div>
+                                <button class="px-space-md py-space-xs rounded-full bg-secondary-container text-on-secondary-fixed hover:bg-secondary-fixed font-label-sm text-label-sm font-bold flex items-center gap-1 cursor-pointer" onclick="addToCart('Silk Velvet Luxury Box', '$34.00')">
+                                    <span>Select Hamper</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Hamper 3 -->
+                    <div class="flex flex-col bg-surface-container-lowest rounded-2xl overflow-hidden shadow-[0_4px_20px_-2px_rgba(29,0,71,0.06)] hover:shadow-[0_12px_32px_-4px_rgba(29,0,71,0.12)] transition-all">
+                        <div class="relative h-60 w-full overflow-hidden bg-surface-container">
+                            <img class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500" data-alt="Artisanal chocolate gift arrangement" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCwLgFo_uh_aHwmP-k6O7HcgJuPxG3VsoyEieZYwlZz_6Cqm__7paejn0g-dejFeI9MOXABaJvh9Qqa5QYzuFpJnhZAlgn1qHs3Ir42mE9ODLYzrQAVFR0V2mir9d81k1JUl7zeRYHjkkQXDEx2_o9dqIp3DqInkuAxMe3iXD-5eEMuglT5V_JHkGYaHYcC0nt8n9tlE1nhpOiVyOzwEKJZUZt7YzKGX-wu2JpQGxcXJ_bMN04aw4szw"/>
+                            <span class="absolute top-4 right-4 bg-primary-container text-on-primary font-label-sm text-label-sm px-3 py-1 rounded-full font-bold">Nut Collection</span>
+                        </div>
+                        <div class="p-space-lg flex-1 flex flex-col">
+                            <h3 class="font-title-lg text-title-lg text-on-surface font-bold">The Nut Lover's Tasting Selection</h3>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant mt-2">
+                                6 chunky roasted almond, hazelnut, and fruit crunch bars crafted specifically for fans of roasted texture and creamy cocoa contrast.
+                            </p>
+                            <div class="mt-auto pt-space-lg flex items-center justify-between">
+                                <div>
+                                    <span class="font-headline-sm text-headline-sm text-on-surface font-bold">$24.00</span>
+                                    <span class="font-body-sm text-[11px] text-secondary font-bold block">Custom Ribbon</span>
+                                </div>
+                                <button class="px-space-md py-space-xs rounded-full bg-secondary-container text-on-secondary-fixed hover:bg-secondary-fixed font-label-sm text-label-sm font-bold flex items-center gap-1 cursor-pointer" onclick="addToCart('Nut Lovers Selection', '$24.00')">
+                                    <span>Select Hamper</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Custom Hamper Banner -->
+                <div class="w-full rounded-3xl bg-primary-container text-on-primary p-space-xl relative overflow-hidden shadow-[0_12px_32px_-4px_rgba(29,0,71,0.2)]">
+                    <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-secondary-container/20 rounded-full blur-3xl pointer-events-none"></div>
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-center relative z-10">
+                        <div class="lg:col-span-8">
+                            <span class="font-label-sm text-label-sm text-secondary-container uppercase tracking-wider font-bold">Interactive Concierge</span>
+                            <h3 class="font-headline-md text-headline-md text-on-primary mt-1 mb-space-xs">Build Your Own Custom Hamper</h3>
+                            <p class="font-body-md text-body-md text-on-primary/80 max-w-xl">
+                                Select your recipient's favourite 6 bars, choose an iconic royal purple or gold celebration ribbon, and write a bespoke keepsake card delivered anywhere.
+                            </p>
+                            <div class="flex flex-wrap items-center gap-space-md mt-space-md">
+                                <span class="flex items-center gap-1 font-label-sm text-label-sm text-on-primary/90">
+                                    <span class="material-symbols-outlined text-[16px] text-secondary-container">check_circle</span>
+                                    Any 6 Bars of Choice
+                                </span>
+                                <span class="flex items-center gap-1 font-label-sm text-label-sm text-on-primary/90">
+                                    <span class="material-symbols-outlined text-[16px] text-secondary-container">check_circle</span>
+                                    Signature Satin Ribbon
+                                </span>
+                                <span class="flex items-center gap-1 font-label-sm text-label-sm text-on-primary/90">
+                                    <span class="material-symbols-outlined text-[16px] text-secondary-container">check_circle</span>
+                                    Custom Embossed Greeting
+                                </span>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-4 flex justify-start lg:justify-end">
+                            <button class="px-space-xl py-space-sm rounded-full bg-secondary-container text-on-secondary-fixed hover:bg-secondary-fixed font-label-lg text-label-lg font-bold shadow-lg transition-transform active:scale-95 cursor-pointer">
+                                Launch Hamper Builder
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RECIPES & CONFECTIONERY CREATIONS -->
+        <section class="w-full py-space-xl lg:py-margin bg-surface-container-low">
+            <div class="max-w-7xl mx-auto px-6 lg:px-12">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-space-xl gap-space-md">
+                    <div>
+                        <span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold">Kitchen Studio</span>
+                        <h2 class="font-headline-lg text-headline-lg text-on-surface mt-1">Bake with Dairy Milk</h2>
+                        <p class="font-body-md text-body-md text-on-surface-variant mt-2">
+                            Elevate homemade treats with the melting properties and velvety sweetness of genuine Dairy Milk.
+                        </p>
+                    </div>
+                    <a class="inline-flex items-center gap-1 font-label-lg text-label-lg text-on-surface hover:text-secondary transition-colors font-bold" href="#">
+                        <span>View All 36 Recipes</span>
+                        <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                    </a>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+                    <!-- Recipe 1 -->
+                    <div class="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col">
+                        <div class="relative h-56 w-full overflow-hidden">
+                            <img class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500" data-alt="Rich chocolate ganache tart" src="https://lh3.googleusercontent.com/aida-public/AB6AXuClUl6qnLj4lZty_9djNj37fSo21P7oQcWaLEqQwI7mySHbphZ2tUvpKDZ0_0TaWpWzaNdN-M_g8eir3H7gWtQddojqUJHOm_JMCKE-pE_xFu4a8VWs0BHrSnmcE2qVfv3bXy7iw93pFKVJerCq-tX1K2M4NOVQ8g2qJeBG988fLp00Ky7m-j2AFCGsmOCGmrfPo0hLTVFjbCkXHBRoU54sAylAncdg_va0Zo0nisWfnijFyxAYzS8AlA"/>
+                            <div class="absolute bottom-3 left-3 bg-surface-container-lowest/90 backdrop-blur-md px-2.5 py-1 rounded-full font-label-sm text-label-sm text-on-surface flex items-center gap-1 shadow-sm">
+                                <span class="material-symbols-outlined text-[14px]">timer</span>
+                                <span>25 mins prep</span>
+                            </div>
+                        </div>
+                        <div class="p-space-md flex-1 flex flex-col">
+                            <span class="font-label-sm text-label-sm text-secondary font-bold uppercase">Dessert Showstopper</span>
+                            <h3 class="font-headline-sm text-headline-sm text-on-surface mt-1 font-bold">Triple-Layer Ganache Tart</h3>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant mt-2">
+                                A buttery biscuit crust layered with slow-melted Dairy Milk ganache and finished with a dark cocoa glaze.
+                            </p>
+                            <div class="mt-auto pt-space-md">
+                                <button class="w-full py-space-xs rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md font-bold flex items-center justify-center gap-1 transition-colors cursor-pointer">
+                                    <span class="material-symbols-outlined text-[16px]">menu_book</span>
+                                    <span>View Recipe &amp; Ingredients</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Recipe 2 -->
+                    <div class="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col">
+                        <div class="relative h-56 w-full overflow-hidden">
+                            <img class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500" data-alt="Warm freshly baked thick chocolate chip cookies" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBw6T0eU60WVPYUMf7De8ZAospWkY1lN2KOc0cLVpFEGvLuIECyI4j2Br50IFcvb2wyoo3MBVytlNs_Rt2gtBYjCfsw_PcdvsKJBucOSMLjJkwW3E6E2XkZ2JKMO359mBa1gfhvpsZk7KynXsfEM1tpo712qdu7bf2StFey9zjhHeZGfllCZP1_eemgMILN93EDFkbv9R9xz1Wk51UtCYXoxE5fa3R2mpAtVUW-mZzTmkgTpRIe8a-W8A"/>
+                            <div class="absolute bottom-3 left-3 bg-surface-container-lowest/90 backdrop-blur-md px-2.5 py-1 rounded-full font-label-sm text-label-sm text-on-surface flex items-center gap-1 shadow-sm">
+                                <span class="material-symbols-outlined text-[14px]">timer</span>
+                                <span>15 mins bake</span>
+                            </div>
+                        </div>
+                        <div class="p-space-md flex-1 flex flex-col">
+                            <span class="font-label-sm text-label-sm text-secondary font-bold uppercase">Family Favourite</span>
+                            <h3 class="font-headline-sm text-headline-sm text-on-surface mt-1 font-bold">Warm Dairy Milk Lava Cookies</h3>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant mt-2">
+                                Crisp golden edges with a molten pool of Dairy Milk inside every warm, sea-salt sprinkled bite.
+                            </p>
+                            <div class="mt-auto pt-space-md">
+                                <button class="w-full py-space-xs rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md font-bold flex items-center justify-center gap-1 transition-colors cursor-pointer">
+                                    <span class="material-symbols-outlined text-[16px]">menu_book</span>
+                                    <span>View Recipe &amp; Ingredients</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Recipe 3 -->
+                    <div class="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col">
+                        <div class="relative h-56 w-full overflow-hidden">
+                            <img class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500" data-alt="Luxurious tall glass filled with iced salted caramel hot chocolate" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1c-kt08ym9UUNePRH9VANtyBIr_0yJms6zRAgDKkhkjc_lNYC8kqIXK-6x9jrv6HXKrPqrjgxZojpY-uhi7p0jR9yhtzHcjrPNASWctXWterBjMj360Sg87QbdpgxqYKRk_1nqrIS_Zh4cfyiAc_OPSuRV03gKpcRmQlBVeJXJ6ro3Zjr-Fk6riGnh68u2A-k8A7ZJG5YABZQvj9FBGHHHWIl3q7gKB70-F99oVG62h5aBJuwNIqiyg"/>
+                            <div class="absolute bottom-3 left-3 bg-surface-container-lowest/90 backdrop-blur-md px-2.5 py-1 rounded-full font-label-sm text-label-sm text-on-surface flex items-center gap-1 shadow-sm">
+                                <span class="material-symbols-outlined text-[14px]">timer</span>
+                                <span>10 mins prep</span>
+                            </div>
+                        </div>
+                        <div class="p-space-md flex-1 flex flex-col">
+                            <span class="font-label-sm text-label-sm text-secondary font-bold uppercase">Sensory Drink</span>
+                            <h3 class="font-headline-sm text-headline-sm text-on-surface mt-1 font-bold">Iced Silk Salted Caramel Cocoa</h3>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant mt-2">
+                                Velvety chilled drink made from melted Silk Caramello and rich double cream topped with sweet whipped swirls.
+                            </p>
+                            <div class="mt-auto pt-space-md">
+                                <button class="w-full py-space-xs rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md font-bold flex items-center justify-center gap-1 transition-colors cursor-pointer">
+                                    <span class="material-symbols-outlined text-[16px]">menu_book</span>
+                                    <span>View Recipe &amp; Ingredients</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CUSTOMER TESTIMONIALS & COMMUNITY WALL -->
+        <section class="w-full py-space-xl lg:py-margin bg-surface">
+            <div class="max-w-7xl mx-auto px-6 lg:px-12">
+                <div class="text-center max-w-2xl mx-auto mb-space-xl">
+                    <span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold">The Community Voice</span>
+                    <h2 class="font-headline-lg text-headline-lg text-on-surface mt-1">Loved Across Generations</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg mb-space-xl">
+                    <!-- Review 1 -->
+                    <div class="p-space-lg rounded-2xl bg-surface-container-lowest shadow-[0_4px_20px_-2px_rgba(29,0,71,0.06)] flex flex-col justify-between">
+                        <div>
+                            <div class="flex text-secondary-container mb-space-sm">
+                                <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                            </div>
+                            <p class="font-body-md text-body-md text-on-surface italic">
+                                “Nothing matches that first snap of a Dairy Milk bar chilled from the fridge. The creaminess simply doesn't exist anywhere else in chocolate world.”
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-space-sm pt-space-md">
+                            <div class="w-10 h-10 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-bold text-xs">EM</div>
+                            <div>
+                                <p class="font-title-lg text-title-lg text-on-surface font-bold text-sm">Eleanor M.</p>
+                                <p class="font-body-sm text-body-sm text-on-surface-variant">Verified Connoisseur • London</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Review 2 -->
+                    <div class="p-space-lg rounded-2xl bg-surface-container-lowest shadow-[0_4px_20px_-2px_rgba(29,0,71,0.06)] flex flex-col justify-between">
+                        <div>
+                            <div class="flex text-secondary-container mb-space-sm">
+                                <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                            </div>
+                            <p class="font-body-md text-body-md text-on-surface italic">
+                                “The Fruit &amp; Nut ratio is completely unmatched. Plump sweet raisins and crunchy toasted nuts in every bite. Ordered the discovery hamper as well!”
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-space-sm pt-space-md">
+                            <div class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-fixed flex items-center justify-center font-bold text-xs">DC</div>
+                            <div>
+                                <p class="font-title-lg text-title-lg text-on-surface font-bold text-sm">David C.</p>
+                                <p class="font-body-sm text-body-sm text-on-surface-variant">Verified Customer • Manchester</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Review 3 -->
+                    <div class="p-space-lg rounded-2xl bg-surface-container-lowest shadow-[0_4px_20px_-2px_rgba(29,0,71,0.06)] flex flex-col justify-between">
+                        <div>
+                            <div class="flex text-secondary-container mb-space-sm">
+                                <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                            </div>
+                            <p class="font-body-md text-body-md text-on-surface italic">
+                                “As a pastry chef, I always keep Cadbury Dairy Milk in my pantry for brownies and ganaches. It melts evenly without separating. An absolute staple.”
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-space-sm pt-space-md">
+                            <div class="w-10 h-10 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center font-bold text-xs">SL</div>
+                            <div>
+                                <p class="font-title-lg text-title-lg text-on-surface font-bold text-sm">Sophie Laurent</p>
+                                <p class="font-body-sm text-body-sm text-on-surface-variant">Pastry Artisan • Edinburgh</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- User Community Photo Gallery (#FreeTheJoy) -->
+                <div class="pt-space-md">
+                    <div class="flex items-center justify-between mb-space-md">
+                        <div class="flex items-center gap-space-xs">
+                            <span class="material-symbols-outlined text-secondary-container text-[20px]">photo_camera</span>
+                            <span class="font-title-lg text-title-lg text-on-surface font-bold">#DairyMilkMoments • #FreeTheJoy</span>
+                        </div>
+                        <span class="font-label-sm text-label-sm text-on-surface-variant font-bold">Tag us on Instagram to be featured</span>
+                    </div>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-space-sm">
+                        <div class="relative aspect-square rounded-xl overflow-hidden group">
+                            <img class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" data-alt="Hands breaking a square of Cadbury Dairy Milk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBleJuJn2_YWL2SFg5C7tUxpLGxdy2XXSp_61We2ObEvOJM3QsfSQSt7WV1LkwJP27F5LeaqwEPbsyMXXEuYXzR-d6dUZvjf0-8DT4hTMlbNRA7Uo-PRQou3OXnhd5vnjhhYfnyMJHSJ8Bhs6unUrxVPBBUpdl1HDxNc-wXGhIRW1ft04yxXWDNAsNYuOPV5X9m0v_Fw2DrlKP71EQ8nlOgQThIWbei9AqgiRT1npUeCtXPIDBFeUn4Q"/>
+                            <div class="absolute inset-0 bg-primary-container/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-on-primary">
+                                <span class="font-label-md text-label-md font-bold">@chocojourneys</span>
+                            </div>
+                        </div>
+                        <div class="relative aspect-square rounded-xl overflow-hidden group">
+                            <img class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" data-alt="Friend group laughing together" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAl2SsMjOoWBwkvtGdeD53ae3I0QYh_toe9JMLPXzLeLs7OAoU27c4a_oJyOUjstazSsPll7zUYeroOq-euQnceTkzEgZISjHvO2F0N7leSbaAqecnEQ6uftXzKJJ9yQhtkCKXaPPxVzBt7uMkIsx_DFuXJLCEzugDqA8vOGBHkJb4EZO3tOEHkzdXOSN8Suid0jfYPUPNORUX87Z5HXhXxuIYpIymVUow-jfOAZptYKyrUXwB-a1o1Q"/>
+                            <div class="absolute inset-0 bg-primary-container/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-on-primary">
+                                <span class="font-label-md text-label-md font-bold">@sarah_bakes</span>
+                            </div>
+                        </div>
+                        <div class="relative aspect-square rounded-xl overflow-hidden group">
+                            <img class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" data-alt="Artisanal glass dessert bowl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAssur1n98y-WgVL4L2_lEVuIDv2jMJzdi1jT3r5JYPT2i-uiG_6rWz6_Qj5Y6q9x9gX-MqrqGK9JIWh5Nv0LfRCBkUpjdcA-ehFgWVQ-18gRstTKnp8rbTUAe4wBSBlU0aVcYAhUNInhcnXgnruH029cSjEiGMP-lgv2otDEwNQkgveyS8sQNja-_5TCRewv40QVoZbw8ifA3LvrxiXKn7PVL_vtMSuxccPrv3TumgoZPmIVcUBCQytg"/>
+                            <div class="absolute inset-0 bg-primary-container/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-on-primary">
+                                <span class="font-label-md text-label-md font-bold">@londonfoodguide</span>
+                            </div>
+                        </div>
+                        <div class="relative aspect-square rounded-xl overflow-hidden group">
+                            <img class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" data-alt="Child giving a wrapped Cadbury Dairy Milk bar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1xqFbJ4vLDzXzltoCKLB7GLchQFml7Yw_1ZW7C6wsEvE_L9GHbL9RDAiX-Kf57YO-fQJ9BsZ1AL485eNqRY4LlfNnw--bC36gI_xsWeD19_w3a_zJ5jY7OlOMCgKrHYE44pfh5c_EaDOGKPryPxA85TknODr7mAexeaaJEnyP9w611sB9qSnYUwafQejg6rJbFmQF64U0gaj90-MceSYxUjELVoiD-_BrKgji4XYDX3mJt0Hp1Zf9Kg"/>
+                            <div class="absolute inset-0 bg-primary-container/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-on-primary">
+                                <span class="font-label-md text-label-md font-bold">@freethejoyuk</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CART FEEDBACK TOAST -->
+        <div class="fixed bottom-6 right-6 z-50 transform translate-y-32 opacity-0 transition-all duration-300 pointer-events-none" id="cartToast">
+            <div class="bg-primary-container text-on-primary px-space-lg py-space-sm rounded-2xl shadow-[0_12px_32px_-4px_rgba(29,0,71,0.35)] flex items-center gap-space-sm">
+                <div class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-fixed flex items-center justify-center">
+                    <span class="material-symbols-outlined text-[18px]">done</span>
+                </div>
+                <div>
+                    <p class="font-label-md text-label-md font-bold" id="cartToastTitle">Added to Bag</p>
+                    <p class="font-body-sm text-[12px] text-on-primary/75" id="cartToastSubtitle">A glass and a half of pure joy!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- FOOTER FROM CODE.HTML -->
+        <footer class="w-full bg-surface-container-low text-on-surface pt-margin pb-space-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+            <div class="max-w-7xl mx-auto px-6 lg:px-12">
+                <div class="bg-primary-container text-on-primary rounded-xl p-space-xl mb-margin shadow-[0_12px_32px_-4px_rgba(29,0,71,0.12)]">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-center">
+                        <div class="lg:col-span-7">
+                            <span class="font-label-sm text-label-sm text-secondary-container uppercase tracking-wider">Dairy Milk Club</span>
+                            <h3 class="font-headline-md text-headline-md text-on-primary mt-space-xs mb-space-sm">Indulge in Moments of Generosity</h3>
+                            <p class="font-body-md text-body-md text-on-primary/80">Subscribe to receive secret tasting drops, bespoke gift collections, and sweet confectionery masterclasses straight to your inbox.</p>
+                        </div>
+                        <div class="lg:col-span-5">
+                            <form class="flex flex-col sm:flex-row gap-space-xs">
+                                <input class="flex-1 px-space-md py-space-sm rounded-full bg-surface-container-lowest font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none" placeholder="Enter your email address" type="email"/>
+                                <button class="bg-secondary-container text-on-secondary-fixed hover:bg-secondary-fixed font-label-lg text-label-lg px-space-lg py-space-sm rounded-full transition-colors font-bold whitespace-nowrap" type="button">Join Club</button>
+                            </form>
+                            <p class="font-label-sm text-label-sm text-on-primary/60 mt-space-xs">By signing up you agree to Cadbury's Privacy Policy &amp; Terms.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-space-lg pb-space-xl">
+                    <div class="col-span-2 md:col-span-1">
+                        <div class="flex items-center gap-space-xs mb-space-md">
+                            <img alt="Dairy Milk Brand Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWk22fU0VNTIuP78VPKWtSapQ8FXgd6f2D42sl4FhqoylG1QVwE5zdjLPEsB6mTxmlfpWLbLS1UFTIqxYEvilQmxTiRKdFqhxN8srIHD48YiT2p6jSfZurN2JoDgdQ8PoI_NEbzA6t-78enqmxz3sFjRssGx2xamYdmBu8Quwz6Q--H9JvMHlR4o9CbfrBKSLStN8njLdmZJfZvG0czhwrGqoJU698Os-4kpQGrUY7ePSzJue5sFp_pA"/>
+                            <span class="font-headline-sm text-headline-sm text-on-surface">Dairy Milk</span>
+                        </div>
+                        <p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">Crafted with a glass and a half of fresh milk in every half pound for that signature silky creaminess since 1905.</p>
+                        <div class="flex items-center gap-space-sm">
+                            <div class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors cursor-pointer"><span class="material-symbols-outlined text-[18px]">share</span></div>
+                            <div class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors cursor-pointer"><span class="material-symbols-outlined text-[18px]">photo_camera</span></div>
+                            <div class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors cursor-pointer"><span class="material-symbols-outlined text-[18px]">play_circle</span></div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="font-title-lg text-title-lg text-on-surface mb-space-md">Flavour Index</h4>
+                        <ul class="space-y-space-xs font-body-sm text-body-sm text-on-surface-variant">
+                            <li><a class="hover:text-on-surface transition-colors" href="#flavour-catalogue">Classic Milk Chocolate</a></li>
+                            <li><a class="hover:text-on-surface transition-colors" href="#flavour-catalogue">Fruit &amp; Nut</a></li>
+                            <li><a class="hover:text-on-surface transition-colors" href="#flavour-catalogue">Whole Nut Hazelnut</a></li>
+                            <li><a class="hover:text-on-surface transition-colors" href="#flavour-catalogue">Caramello Rich Cream</a></li>
+                            <li><a class="hover:text-on-surface transition-colors" href="#flavour-catalogue">Roast Almond</a></li>
+                            <li><a class="hover:text-on-surface transition-colors" href="#flavour-catalogue">Silk Indulgence</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-title-lg text-title-lg text-on-surface mb-space-md">Our Heritage</h4>
+                        <ul class="space-y-space-xs font-body-sm text-body-sm text-on-surface-variant">
+                            <li><a class="hover:text-on-surface transition-colors" href="#heritage-story">Bournville Village Legacy</a></li>
+                            <li><a class="hover:text-on-surface transition-colors" href="#heritage-story">The Glass &amp; A Half Promise</a></li>
+                            <li><a class="hover:text-on-surface transition-colors" href="#heritage-story">100% Cocoa Life</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-title-lg text-title-lg text-on-surface mb-space-md">Care &amp; Quality</h4>
+                        <ul class="space-y-space-xs font-body-sm text-body-sm text-on-surface-variant">
+                            <li><a class="hover:text-on-surface transition-colors" href="#">Allergen &amp; Nutrition Guide</a></li>
+                            <li><a class="hover:text-on-surface transition-colors" href="#">Vegetarian Status</a></li>
+                            <li><a class="hover:text-on-surface transition-colors" href="#">Sustainable Packaging</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-title-lg text-title-lg text-on-surface mb-space-md">Cocoa Life</h4>
+                        <p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">Supporting sustainable farming communities across West Africa and Southeast Asia.</p>
+                        <div class="p-space-sm rounded-lg bg-surface-container flex items-center gap-space-sm">
+                            <span class="material-symbols-outlined text-[24px] text-secondary">eco</span>
+                            <div>
+                                <p class="font-label-sm text-label-sm font-bold text-on-surface">100% Sourced</p>
+                                <p class="font-body-sm text-body-sm text-on-surface-variant">Protecting future cocoa</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pt-space-md flex flex-col md:flex-row items-center justify-between gap-space-sm font-label-md text-label-md text-on-surface-variant">
+                    <p>© 2026 Mondelez International • Cadbury Dairy Milk. All rights reserved.</p>
+                    <div class="flex items-center gap-space-md">
+                        <span>Privacy Statement</span>
+                        <span>Terms of Use</span>
+                        <span>Cookie Settings</span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Script handlers for filter, price slider, sorting and cart toast -->
+    <script>
+      let activeCategory = 'all';
+      let maxPrice = 6.00;
+      let currentSort = 'default';
+
+      function setCategoryFilter(category, btnElement) {
+        activeCategory = category;
+        
+        const pills = document.querySelectorAll('.filter-pill');
+        pills.forEach(pill => {
+          pill.classList.remove('bg-secondary-container', 'text-on-secondary-fixed', 'font-bold');
+          pill.classList.add('bg-surface-container', 'text-on-surface', 'font-medium');
+        });
+
+        if (btnElement) {
+          btnElement.classList.remove('bg-surface-container', 'text-on-surface', 'font-medium');
+          btnElement.classList.add('bg-secondary-container', 'text-on-secondary-fixed', 'font-bold');
+        }
+
+        applyFilters();
+      }
+
+      function setPriceFilter(val) {
+        maxPrice = parseFloat(val);
+        const display = document.getElementById('priceDisplay');
+        if (display) display.textContent = '$' + maxPrice.toFixed(2);
+        applyFilters();
+      }
+
+      function setSortOrder(sortVal) {
+        currentSort = sortVal;
+        applyFilters();
+      }
+
+      function applyFilters() {
+        const grid = document.getElementById('productsGrid');
+        if (!grid) return;
+
+        const cards = Array.from(grid.querySelectorAll('.flavour-card'));
+        let visibleCount = 0;
+
+        cards.forEach(card => {
+          const cat = card.getAttribute('data-category');
+          const price = parseFloat(card.getAttribute('data-price') || '0');
+
+          const matchCat = (activeCategory === 'all' || cat === activeCategory);
+          const matchPrice = (price <= maxPrice);
+
+          if (matchCat && matchPrice) {
+            card.style.display = 'flex';
+            visibleCount++;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        // Sort visible cards
+        const visibleCards = cards.filter(card => card.style.display !== 'none');
+        
+        if (currentSort === 'price-asc') {
+          visibleCards.sort((a, b) => parseFloat(a.getAttribute('data-price')) - parseFloat(b.getAttribute('data-price')));
+        } else if (currentSort === 'price-desc') {
+          visibleCards.sort((a, b) => parseFloat(b.getAttribute('data-price')) - parseFloat(a.getAttribute('data-price')));
+        } else if (currentSort === 'rating') {
+          visibleCards.sort((a, b) => parseFloat(b.getAttribute('data-rating')) - parseFloat(a.getAttribute('data-rating')));
+        }
+
+        visibleCards.forEach(card => grid.appendChild(card));
+
+        // Update indicator badges
+        const badge = document.getElementById('activeFilterBadge');
+        const countText = document.getElementById('resultsCount');
+
+        if (badge) {
+          badge.textContent = `Category: ${activeCategory.toUpperCase()} | Max: $${maxPrice.toFixed(2)}`;
+        }
+        if (countText) {
+          countText.textContent = `${visibleCount} product${visibleCount === 1 ? '' : 's'} available`;
+        }
+      }
+
+      function resetFilters() {
+        activeCategory = 'all';
+        maxPrice = 6.00;
+        currentSort = 'default';
+
+        const slider = document.getElementById('priceRange');
+        const display = document.getElementById('priceDisplay');
+        const select = document.getElementById('sortSelect');
+
+        if (slider) slider.value = '6.00';
+        if (display) display.textContent = '$6.00';
+        if (select) select.value = 'default';
+
+        const pills = document.querySelectorAll('.filter-pill');
+        if (pills.length > 0) {
+          setCategoryFilter('all', pills[0]);
+        } else {
+          applyFilters();
+        }
+      }
+
+      function addToCart(productName, price) {
+        const toast = document.getElementById('cartToast');
+        const toastTitle = document.getElementById('cartToastTitle');
+        const toastSubtitle = document.getElementById('cartToastSubtitle');
+
+        if (toast && toastTitle && toastSubtitle) {
+          toastTitle.textContent = productName + ' Added';
+          toastSubtitle.textContent = price + ' • Free shipping on gift sets';
+
+          toast.classList.remove('translate-y-32', 'opacity-0');
+          toast.classList.add('translate-y-0', 'opacity-100');
+
+          setTimeout(() => {
+            toast.classList.remove('translate-y-0', 'opacity-100');
+            toast.classList.add('translate-y-32', 'opacity-0');
+          }, 2600);
+        }
+      }
+    </script>
+
+    <script src="app.js"></script>
+</body>
+</html>
