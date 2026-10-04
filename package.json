@@ -1,15 +1,16 @@
 {
-  "name": "dairymilk-website",
+  "name": "fevicol-choco-ltd-website",
   "version": "1.0.0",
-  "description": "Cadbury Dairy Milk - Interactive 3D Scroll Animation Website",
+  "description": "Fevicol Choco Ltd - Interactive 3D Scroll Animation Website",
   "main": "index.html",
   "scripts": {
     "dev": "npx -y serve .",
     "start": "npx -y serve ."
   },
   "keywords": [
-    "cadbury",
-    "dairy-milk",
+    "fevicol-choco-ltd",
+    "fevicol",
+    "choco-ltd",
     "scroll-animation",
     "canvas-animation",
     "vercel"

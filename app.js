@@ -1,5 +1,5 @@
 /* ==========================================================================
-   CADBURY DAIRY MILK - SCROLL ANIMATION ENGINE
+   FEVICOL CHOCO LTD - SCROLL ANIMATION ENGINE
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {

@@ -1,8 +1,8 @@
-# 🍫 Cadbury Dairy Milk — Interactive 3D Scroll Experience
+# 🍫 Fevicol Choco Ltd — Interactive 3D Scroll Experience
 
-A luxury, interactive web experience for Cadbury Dairy Milk featuring a high-performance 240-frame 3D scroll animation engine, dynamic audio synth, interactive product showcase, and seamless order system.
+A luxury, interactive web experience for Fevicol Choco Ltd featuring a high-performance 240-frame 3D scroll animation engine, dynamic audio synth, interactive product showcase, and seamless order system.
 
-![Cadbury Dairy Milk](https://img.shields.io/badge/Cadbury-Dairy%20Milk-3c0475?style=for-the-badge)
+![Fevicol Choco Ltd](https://img.shields.io/badge/Fevicol-Choco%20Ltd-3c0475?style=for-the-badge)
 ![Deploy with Vercel](https://img.shields.io/badge/Deploy-Vercel-000000?style=for-the-badge&logo=vercel)
 
 ---
