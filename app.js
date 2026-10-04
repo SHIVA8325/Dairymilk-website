@@ -855,6 +855,9 @@ function openProductModal(productId) {
     document.body.style.overflow = 'hidden';
     
     if (window.lucide) lucide.createIcons();
+
+    // Track product view in Supabase
+    trackProductView(product);
 }
 
 function closeProductModal() {
@@ -917,6 +920,9 @@ function addToCart(event, productId) {
 
     updateCartUI();
     showToast(`${product.name} added to cart`, `$${product.price.toFixed(2)} • 1.5 Glasses Fresh Milk`);
+
+    // Track product added to cart in Supabase
+    trackAddToCart(product);
 }
 
 function updateCartUI() {
@@ -1016,6 +1022,7 @@ function closeCartDrawer() {
 function toggleWishlist(event, productId, btnElem) {
     if (event) event.stopPropagation();
 
+    const isAdding = !wishlistItems.has(productId);
     if (wishlistItems.has(productId)) {
         wishlistItems.delete(productId);
         showToast('Removed from Wishlist', 'Item saved removed');
@@ -1032,6 +1039,9 @@ function toggleWishlist(event, productId, btnElem) {
             btnElem.classList.toggle('text-error', isFilled);
         }
     }
+
+    // Track wishlist action in Supabase
+    trackWishlist(productId, isAdding ? 'add' : 'remove');
 }
 
 // --------------------------------------------------------------------------
@@ -1071,11 +1081,28 @@ function closeCheckoutModal() {
 function handleCheckoutSubmit(event) {
     event.preventDefault();
 
+    const subtotal = cartItems.reduce((acc, item) => acc + (item.price * item.qty), 0);
+    const shipping = subtotal >= 30 ? 0 : 4.50;
+    const total = subtotal + shipping;
+    const orderNumber = 'ORD-' + Math.floor(100000 + Math.random() * 900000);
+
     const form = document.getElementById('checkout-form');
     const success = document.getElementById('checkout-success');
 
     form.classList.add('hidden');
     success.classList.remove('hidden');
+
+    // Track completed order in Supabase
+    trackOrder({
+        orderNumber: orderNumber,
+        customerName: 'Guest Customer',
+        customerEmail: 'customer@fevicolchoco.com',
+        shippingAddress: 'Standard Express Shipping',
+        subtotal: subtotal,
+        shipping: shipping,
+        total: total,
+        items: [...cartItems]
+    });
 
     // Clear Cart
     cartItems = [];
@@ -1298,7 +1325,166 @@ function showToast(title, subtitle) {
 
 function handleNewsletterSubmit(event) {
     event.preventDefault();
+    const emailInput = event.target.querySelector('input[type="email"]');
+    const email = emailInput ? emailInput.value : '';
+
     showToast('Welcome to Fevicol Choco Club! 🍫', 'Check your inbox for your 15% welcome discount code');
+    
+    // Track subscriber in Supabase
+    if (email) trackNewsletter(email);
+
     event.target.reset();
+}
+
+// --------------------------------------------------------------------------
+// 13. Supabase Integration Setup
+// Project ID: ffzxalvmywrlptlurnlq
+// --------------------------------------------------------------------------
+const SUPABASE_URL = 'https://ffzxalvmywrlptlurnlq.supabase.co';
+const SUPABASE_ANON_KEY = 'sb_publishable_SBEiHpwm2x3ieKU3J4XAGg_wxPr3iH3';
+
+let supabaseClient = null;
+
+function initSupabase() {
+    try {
+        if (window.supabase && typeof window.supabase.createClient === 'function') {
+            supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+            console.log('✅ Connected to Supabase Project: ffzxalvmywrlptlurnlq');
+        } else {
+            console.warn('⚠️ Supabase JS SDK library loading...');
+        }
+    } catch (err) {
+        console.error('Supabase initialization error:', err);
+    }
+}
+
+function getOrCreateSessionId() {
+    let session = localStorage.getItem('fevicol_session_id');
+    if (!session) {
+        session = 'sess_' + Math.random().toString(36).substring(2, 11) + '_' + Date.now();
+        localStorage.setItem('fevicol_session_id', session);
+    }
+    return session;
+}
+
+// Log product interactions (views / modal opens)
+async function trackProductView(product) {
+    if (!product) return;
+    const payload = {
+        product_id: product.id,
+        product_name: product.name,
+        category: product.category || 'Classic',
+        price: product.price,
+        session_id: getOrCreateSessionId(),
+        created_at: new Date().toISOString()
+    };
+
+    console.log('📡 [Supabase] Product viewed:', payload);
+
+    if (supabaseClient) {
+        try {
+            await supabaseClient.from('product_interactions').insert([payload]);
+            await supabaseClient.from('product_views').insert([payload]);
+        } catch (err) {
+            console.warn('Supabase product view log notice:', err);
+        }
+    }
+}
+
+// Log cart additions
+async function trackAddToCart(product) {
+    if (!product) return;
+    const payload = {
+        product_id: product.id,
+        product_name: product.name,
+        price: product.price,
+        weight: product.weight || '110g',
+        session_id: getOrCreateSessionId(),
+        created_at: new Date().toISOString()
+    };
+
+    console.log('🛒 [Supabase] Product added to cart:', payload);
+
+    if (supabaseClient) {
+        try {
+            await supabaseClient.from('cart_events').insert([payload]);
+            await supabaseClient.from('cart_items').insert([payload]);
+        } catch (err) {
+            console.warn('Supabase cart log notice:', err);
+        }
+    }
+}
+
+// Log orders placed
+async function trackOrder(orderData) {
+    if (!orderData) return;
+    const payload = {
+        order_number: orderData.orderNumber,
+        customer_name: orderData.customerName || 'Guest Customer',
+        customer_email: orderData.customerEmail || 'guest@example.com',
+        shipping_address: orderData.shippingAddress || 'Standard Delivery',
+        subtotal: orderData.subtotal,
+        shipping_fee: orderData.shipping,
+        total: orderData.total,
+        items: orderData.items,
+        session_id: getOrCreateSessionId(),
+        created_at: new Date().toISOString()
+    };
+
+    console.log('📦 [Supabase] Order recorded:', payload);
+
+    if (supabaseClient) {
+        try {
+            await supabaseClient.from('orders').insert([payload]);
+        } catch (err) {
+            console.warn('Supabase order log notice:', err);
+        }
+    }
+}
+
+// Log wishlist changes
+async function trackWishlist(productId, action) {
+    const payload = {
+        product_id: productId,
+        action: action,
+        session_id: getOrCreateSessionId(),
+        created_at: new Date().toISOString()
+    };
+
+    console.log('❤️ [Supabase] Wishlist updated:', payload);
+
+    if (supabaseClient) {
+        try {
+            await supabaseClient.from('wishlist_events').insert([payload]);
+        } catch (err) {
+            console.warn('Supabase wishlist log notice:', err);
+        }
+    }
+}
+
+// Log newsletter subscriptions
+async function trackNewsletter(email) {
+    const payload = {
+        email: email,
+        session_id: getOrCreateSessionId(),
+        created_at: new Date().toISOString()
+    };
+
+    console.log('📧 [Supabase] Newsletter subscriber:', payload);
+
+    if (supabaseClient) {
+        try {
+            await supabaseClient.from('newsletter_subscribers').insert([payload]);
+        } catch (err) {
+            console.warn('Supabase newsletter log notice:', err);
+        }
+    }
+}
+
+// Auto-initialize on window load
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initSupabase);
+} else {
+    initSupabase();
 }
 

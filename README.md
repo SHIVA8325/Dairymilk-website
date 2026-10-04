@@ -57,7 +57,25 @@ vercel
 ├── index.html           # Main application HTML with Tailwind CSS & Google Fonts
 ├── styles.css           # Custom glassmorphism & animation styles
 ├── app.js               # Canvas scroll engine & audio synth logic
+├── supabase_schema.sql  # SQL schema for Supabase tables & RLS policies
 ├── vercel.json          # Vercel CDN routing & cache configuration
 ├── package.json         # Project metadata & local dev scripts
 └── .gitignore           # Git ignore rules
 ```
+
+---
+
+## ⚡ Supabase Backend Integration
+
+This project is connected directly to **Supabase** (Project ID: `ffzxalvmywrlptlurnlq`).
+
+### Tracked Analytics & Database Tables:
+1. **`product_interactions` / `product_views`**: Logs whenever a user views or clicks on a product card.
+2. **`cart_events` / `cart_items`**: Logs whenever a user adds a product to their shopping bag.
+3. **`orders`**: Records full order details upon checkout completion.
+4. **`wishlist_events`**: Tracks product additions/removals from personal wishlists.
+5. **`newsletter_subscribers`**: Captures user email signups for Fevicol Choco Club.
+
+### Database Setup:
+Run the SQL code provided in [`supabase_schema.sql`](file:///c:/Users/Shiva%20Kumar/OneDrive/Desktop/python_workspace/dairy/supabase_schema.sql) in your **Supabase Dashboard -> SQL Editor** to create all tables and RLS policy rules automatically.
+
