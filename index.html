@@ -151,6 +151,9 @@
             <span class="nav-badge">Pure Milk Chocolate</span>
         </div>
         <div class="nav-actions">
+            <button id="search-btn" onclick="openSearchModal()" class="icon-btn glass-btn" title="Search Chocolates (Press /)">
+                <i data-lucide="search" id="search-icon"></i>
+            </button>
             <button id="sound-toggle" class="icon-btn glass-btn" title="Toggle Ambient Audio">
                 <i data-lucide="volume-x" id="sound-icon"></i>
             </button>
@@ -178,12 +181,21 @@
             <!-- Centered Overlay Text -->
             <div id="hero-text-overlay" class="hero-text-overlay">
                 <div class="hero-text-card">
-                    <span class="hero-badge">A GLASS AND A HALF</span>
-                    <h1 class="hero-heading">FEVICOL CHOCO LTD</h1>
+                    <span class="hero-badge cursor-pointer hover:bg-secondary-container/30 transition-colors" onclick="openProductModal('classic-fevicol')">A GLASS AND A HALF</span>
+                    <h1 class="hero-heading cursor-pointer hover:text-secondary transition-colors" onclick="openProductModal('classic-fevicol')">FEVICOL CHOCO LTD</h1>
                     <p class="hero-subheading">
                         Made with unmatched rich cocoa and fresh milk… It’s the classic creamy taste that’s unmistakably Fevicol Choco Ltd.
                     </p>
-                    <div class="hero-scroll-indicator">
+                    <div class="flex flex-wrap items-center justify-center gap-3 mt-4">
+                        <button onclick="openProductModal('classic-fevicol')" class="px-6 py-2.5 rounded-full bg-secondary-container text-on-secondary-fixed font-bold text-xs shadow-lg hover:bg-secondary-fixed transition-all cursor-pointer">
+                            Explore Classic Milk Bar
+                        </button>
+                        <button onclick="openSearchModal()" class="px-6 py-2.5 rounded-full bg-surface-container/80 text-on-surface hover:bg-surface-container font-bold text-xs border border-white/10 transition-all cursor-pointer flex items-center gap-1.5">
+                            <span class="material-symbols-outlined text-[16px]">search</span>
+                            <span>Search All Products</span>
+                        </button>
+                    </div>
+                    <div class="hero-scroll-indicator mt-4">
                         <span class="mouse-icon"><span class="wheel"></span></span>
                         <span>Scroll to Experience the Melt</span>
                     </div>
@@ -1046,7 +1058,344 @@
         </footer>
     </div>
 
-    <!-- Script handlers for filter, price slider, sorting and cart toast -->
+    <!-- MODALS & DRAWERS SECTION -->
+
+    <!-- 1. PRODUCT DETAIL MODAL -->
+    <div id="product-detail-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 sm:p-6 overflow-y-auto backdrop-blur-xl bg-background/80 transition-all duration-300">
+        <div class="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-surface-container-lowest border border-white/10 rounded-3xl shadow-2xl p-6 sm:p-8 text-on-surface">
+            <button onclick="closeProductModal()" aria-label="Close product details" class="absolute top-4 right-4 w-10 h-10 rounded-full bg-surface-container/80 hover:bg-surface-container text-on-surface flex items-center justify-center transition-all cursor-pointer z-20">
+                <span class="material-symbols-outlined text-[20px]">close</span>
+            </button>
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+                <!-- Product Left: Media & Spec Badges -->
+                <div class="md:col-span-5 flex flex-col items-center">
+                    <div class="relative w-full aspect-square rounded-2xl overflow-hidden bg-primary-container/10 border border-white/5 flex items-center justify-center shadow-lg">
+                        <span id="pm-badge" class="absolute top-3 left-3 font-label-sm text-label-sm px-3 py-1 rounded-full font-bold shadow-sm z-10"></span>
+                        <button id="pm-wishlist-btn" onclick="toggleProductModalWishlist()" aria-label="Add to wishlist" class="absolute top-3 right-3 w-10 h-10 rounded-full bg-surface/80 backdrop-blur-md text-on-surface hover:text-error flex items-center justify-center transition-all z-10 shadow-sm cursor-pointer">
+                            <span class="material-symbols-outlined text-[20px]">favorite</span>
+                        </button>
+                        <img id="pm-image" src="" alt="" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.src='https://lh3.googleusercontent.com/aida-public/AB6AXuB3R1V4d72d_N_j8YJ11Vst6_qA6g7t972lX8yKj_Qy0FvN6u_9H47eGk0970aK26F74-qR82xJj19kZ_wB9a7e0V_b1h_N14fXz80hC0y-mR0d8zR21J04aX73y4596d-3s2207b1d';"/>
+                    </div>
+                    <!-- Quick Spec Badges -->
+                    <div class="grid grid-cols-2 gap-2 w-full mt-4">
+                        <div class="p-3 bg-surface-container rounded-xl text-center">
+                            <span class="text-[10px] text-on-surface-variant block uppercase font-bold">Cocoa Content</span>
+                            <span id="pm-cocoa" class="font-bold text-xs text-secondary-container"></span>
+                        </div>
+                        <div class="p-3 bg-surface-container rounded-xl text-center">
+                            <span class="text-[10px] text-on-surface-variant block uppercase font-bold">Fresh Milk</span>
+                            <span id="pm-milk" class="font-bold text-xs text-secondary"></span>
+                        </div>
+                        <div class="p-3 bg-surface-container rounded-xl text-center">
+                            <span class="text-[10px] text-on-surface-variant block uppercase font-bold">Energy</span>
+                            <span id="pm-calories" class="font-bold text-xs text-on-surface"></span>
+                        </div>
+                        <div class="p-3 bg-surface-container rounded-xl text-center">
+                            <span class="text-[10px] text-on-surface-variant block uppercase font-bold">Origin</span>
+                            <span id="pm-origin" class="font-bold text-xs text-on-surface"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Right: Details, Price, Quantity & Add to Cart -->
+                <div class="md:col-span-7 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between gap-2">
+                            <span id="pm-weight" class="text-xs font-bold uppercase tracking-wider text-secondary"></span>
+                            <div class="flex items-center gap-1 text-xs font-bold text-secondary-container">
+                                <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span id="pm-rating"></span>
+                                <span id="pm-reviews" class="text-on-surface-variant font-normal"></span>
+                            </div>
+                        </div>
+
+                        <h2 id="pm-title" class="font-headline-md text-2xl sm:text-3xl font-bold text-on-surface mt-1"></h2>
+                        <p id="pm-tagline" class="font-title-lg text-sm text-secondary-container/90 italic mt-1"></p>
+
+                        <div class="flex items-baseline gap-3 mt-4">
+                            <span id="pm-price" class="text-3xl font-bold text-primary-container"></span>
+                            <span id="pm-orig-price" class="text-base text-on-surface-variant/60 line-through"></span>
+                            <span id="pm-unit-price" class="text-xs text-on-surface-variant"></span>
+                        </div>
+
+                        <div class="flex items-center gap-2 mt-3 text-xs text-emerald-400 font-bold bg-emerald-950/40 border border-emerald-500/20 px-3 py-1.5 rounded-full w-fit">
+                            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                            <span>In Stock • Fresh Batch from Bournville</span>
+                        </div>
+
+                        <p id="pm-desc" class="font-body-md text-xs sm:text-sm text-on-surface-variant mt-4 leading-relaxed"></p>
+
+                        <div class="mt-4">
+                            <h4 class="font-bold text-xs uppercase text-secondary tracking-wider mb-2">Key Highlights</h4>
+                            <ul id="pm-highlights" class="space-y-1.5"></ul>
+                        </div>
+
+                        <!-- Quantity Selector & Add to Cart Button -->
+                        <div class="flex flex-wrap items-center gap-4 mt-6 pt-4 border-t border-white/10">
+                            <div class="flex items-center bg-surface-container rounded-full p-1 border border-white/10">
+                                <button onclick="changeProductModalQty(-1)" aria-label="Decrease quantity" class="w-9 h-9 rounded-full bg-surface-container-high hover:bg-surface-variant text-on-surface font-bold text-lg flex items-center justify-center transition-colors cursor-pointer">-</button>
+                                <span id="pm-qty" class="w-10 text-center font-bold text-sm">1</span>
+                                <button onclick="changeProductModalQty(1)" aria-label="Increase quantity" class="w-9 h-9 rounded-full bg-surface-container-high hover:bg-surface-variant text-on-surface font-bold text-lg flex items-center justify-center transition-colors cursor-pointer">+</button>
+                            </div>
+                            <button id="pm-add-cart-btn" onclick="addProductModalToCart()" class="flex-1 py-3 px-6 rounded-full bg-secondary-container text-on-secondary-fixed hover:bg-secondary-fixed font-label-lg font-bold flex items-center justify-center gap-2 shadow-lg transition-transform active:scale-95 cursor-pointer">
+                                <span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+                                <span>Add to Cart</span>
+                            </button>
+                        </div>
+
+                        <!-- Specifications Accordion -->
+                        <div class="mt-6 space-y-3 pt-4 border-t border-white/10 text-xs text-on-surface-variant">
+                            <div>
+                                <span class="font-bold text-on-surface block">Ingredients:</span>
+                                <p id="pm-ingredients" class="mt-0.5"></p>
+                            </div>
+                            <div>
+                                <span class="font-bold text-on-surface block">Allergen Information:</span>
+                                <p id="pm-allergen" class="mt-0.5 text-secondary-container"></p>
+                            </div>
+                            <div>
+                                <span class="font-bold text-on-surface block">Serving Suggestion:</span>
+                                <p id="pm-serving" class="mt-0.5 italic"></p>
+                            </div>
+                            <div class="bg-surface-container/50 rounded-xl p-3">
+                                <span class="font-bold text-on-surface block mb-2">Nutritional Values (per 100g):</span>
+                                <div class="grid grid-cols-4 sm:grid-cols-7 gap-2 text-center text-[10px]">
+                                    <div><span class="block text-on-surface-variant">Energy</span><strong id="pm-nut-energy" class="text-on-surface block mt-0.5"></strong></div>
+                                    <div><span class="block text-on-surface-variant">Fat</span><strong id="pm-nut-fat" class="text-on-surface block mt-0.5"></strong></div>
+                                    <div><span class="block text-on-surface-variant">Sat. Fat</span><strong id="pm-nut-satfat" class="text-on-surface block mt-0.5"></strong></div>
+                                    <div><span class="block text-on-surface-variant">Carbs</span><strong id="pm-nut-carbs" class="text-on-surface block mt-0.5"></strong></div>
+                                    <div><span class="block text-on-surface-variant">Sugar</span><strong id="pm-nut-sugar" class="text-on-surface block mt-0.5"></strong></div>
+                                    <div><span class="block text-on-surface-variant">Protein</span><strong id="pm-nut-protein" class="text-on-surface block mt-0.5"></strong></div>
+                                    <div><span class="block text-on-surface-variant">Sodium</span><strong id="pm-nut-sodium" class="text-on-surface block mt-0.5"></strong></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. CART DRAWER -->
+    <div id="cart-drawer" class="fixed inset-0 z-50 hidden backdrop-blur-md bg-background/60 transition-opacity">
+        <div class="absolute inset-0" onclick="closeCartDrawer()"></div>
+        <div class="absolute right-0 top-0 bottom-0 w-full max-w-md bg-surface-container-lowest border-l border-white/10 shadow-2xl flex flex-col justify-between p-6 z-10 overflow-y-auto text-on-surface">
+            <div>
+                <div class="flex items-center justify-between pb-4 border-b border-white/10">
+                    <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-secondary text-[24px]">shopping_bag</span>
+                        <h3 class="font-headline-sm text-xl font-bold">Your Chocolate Bag</h3>
+                    </div>
+                    <button onclick="closeCartDrawer()" class="w-8 h-8 rounded-full bg-surface-container hover:bg-surface-container-high flex items-center justify-center transition-colors cursor-pointer">
+                        <span class="material-symbols-outlined text-[18px]">close</span>
+                    </button>
+                </div>
+
+                <div id="cart-drawer-empty" class="text-center py-12">
+                    <span class="material-symbols-outlined text-secondary-container text-[48px]">shopping_basket</span>
+                    <p class="font-bold text-on-surface mt-3">Your bag is currently empty</p>
+                    <p class="text-xs text-on-surface-variant mt-1">Explore our sensory collection and add a bar of pure joy!</p>
+                    <button onclick="closeCartDrawer(); document.getElementById('flavour-catalogue').scrollIntoView({behavior: 'smooth'});" class="mt-6 px-6 py-2.5 rounded-full bg-secondary-container text-on-secondary-fixed font-bold text-xs shadow-md hover:bg-secondary-fixed transition-all cursor-pointer">
+                        Browse Chocolates
+                    </button>
+                </div>
+
+                <div id="cart-drawer-items" class="space-y-3 mt-4"></div>
+            </div>
+
+            <div id="cart-drawer-footer" class="pt-4 border-t border-white/10 hidden">
+                <div class="space-y-2 text-xs text-on-surface-variant mb-4">
+                    <div class="flex justify-between">
+                        <span>Subtotal</span>
+                        <strong id="cart-subtotal" class="text-on-surface font-bold"></strong>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>Express Insured Shipping</span>
+                        <strong id="cart-shipping" class="text-secondary-container font-bold"></strong>
+                    </div>
+                    <div class="flex justify-between text-sm font-bold text-on-surface pt-2 border-t border-white/5">
+                        <span>Total Amount</span>
+                        <strong id="cart-total" class="text-primary-container text-lg"></strong>
+                    </div>
+                </div>
+                <button onclick="openCheckoutModal()" class="w-full py-3.5 rounded-full bg-secondary-container text-on-secondary-fixed hover:bg-secondary-fixed font-bold text-sm shadow-lg flex items-center justify-center gap-2 transition-transform active:scale-95 cursor-pointer">
+                    <span class="material-symbols-outlined text-[18px]">lock</span>
+                    <span>Proceed to Checkout</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. CHECKOUT MODAL -->
+    <div id="checkout-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 overflow-y-auto backdrop-blur-xl bg-background/80">
+        <div class="relative w-full max-w-lg bg-surface-container-lowest border border-white/10 rounded-3xl shadow-2xl p-6 sm:p-8 text-on-surface">
+            <button onclick="closeCheckoutModal()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-surface-container flex items-center justify-center transition-colors cursor-pointer">
+                <span class="material-symbols-outlined text-[18px]">close</span>
+            </button>
+
+            <form id="checkout-form" onsubmit="handleCheckoutSubmit(event)">
+                <h3 class="font-headline-sm text-2xl font-bold text-on-surface mb-1">Express Checkout</h3>
+                <p class="text-xs text-on-surface-variant mb-6">Complete your details to receive temperature-controlled delivery.</p>
+
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-bold text-secondary uppercase tracking-wider mb-1">Full Name</label>
+                        <input type="text" required class="w-full bg-surface-container text-on-surface border border-white/10 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-secondary-container" placeholder="e.g. Eleanor Vance"/>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-secondary uppercase tracking-wider mb-1">Email Address</label>
+                        <input type="email" required class="w-full bg-surface-container text-on-surface border border-white/10 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-secondary-container" placeholder="eleanor@example.com"/>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-secondary uppercase tracking-wider mb-1">Shipping Address</label>
+                        <input type="text" required class="w-full bg-surface-container text-on-surface border border-white/10 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-secondary-container" placeholder="Street, City, Postcode"/>
+                    </div>
+                </div>
+
+                <div class="bg-surface-container/60 rounded-2xl p-4 mt-6 text-xs space-y-2">
+                    <div class="flex justify-between"><span>Subtotal:</span><strong id="checkout-subtotal"></strong></div>
+                    <div class="flex justify-between"><span>Shipping:</span><strong id="checkout-shipping"></strong></div>
+                    <div class="flex justify-between text-sm font-bold text-secondary-container pt-2 border-t border-white/10"><span>Order Total:</span><strong id="checkout-total"></strong></div>
+                </div>
+
+                <button type="submit" class="w-full mt-6 py-3.5 rounded-full bg-secondary-container text-on-secondary-fixed hover:bg-secondary-fixed font-bold text-sm shadow-lg transition-transform active:scale-95 cursor-pointer">
+                    Place Order Now
+                </button>
+            </form>
+
+            <div id="checkout-success" class="text-center py-8 hidden">
+                <span class="material-symbols-outlined text-emerald-400 text-[64px]">verified</span>
+                <h3 class="font-headline-sm text-2xl font-bold text-on-surface mt-2">Order Confirmed!</h3>
+                <p class="text-xs text-on-surface-variant mt-2 max-w-xs mx-auto">Thank you for your purchase! A confirmation email has been sent. Your chocolates are being prepared in our climate-controlled cellar.</p>
+                <button onclick="closeCheckoutModal()" class="mt-6 px-6 py-2.5 rounded-full bg-secondary-container text-on-secondary-fixed font-bold text-xs shadow-md cursor-pointer">
+                    Back to Store
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. SEARCH MODAL -->
+    <div id="search-modal" class="fixed inset-0 z-50 hidden flex items-start justify-center pt-16 sm:pt-24 p-4 overflow-y-auto backdrop-blur-xl bg-background/85 transition-all">
+        <div class="relative w-full max-w-2xl bg-surface-container-lowest border border-white/10 rounded-3xl shadow-2xl p-6 text-on-surface">
+            <div class="flex items-center justify-between pb-4 border-b border-white/10">
+                <div class="flex items-center gap-3 flex-1 pr-4">
+                    <span class="material-symbols-outlined text-secondary text-[24px]">search</span>
+                    <input id="search-input" type="text" oninput="handleSearchInput(this.value)" placeholder="Search chocolates, flavors, ingredients (e.g. Silk, Almond, Caramel)..." class="w-full bg-transparent text-on-surface text-base sm:text-lg focus:outline-none placeholder:text-on-surface-variant/50 font-medium"/>
+                </div>
+                <button onclick="closeSearchModal()" class="w-8 h-8 rounded-full bg-surface-container hover:bg-surface-container-high flex items-center justify-center transition-colors cursor-pointer shrink-0">
+                    <span class="material-symbols-outlined text-[18px]">close</span>
+                </button>
+            </div>
+
+            <div class="mt-4 flex flex-wrap items-center gap-2 text-xs">
+                <span class="text-on-surface-variant font-bold">Quick filters:</span>
+                <button onclick="setSearchCategory('Classic')" class="px-3 py-1 rounded-full bg-surface-container hover:bg-secondary-container hover:text-on-secondary-fixed transition-colors font-medium cursor-pointer">Classic</button>
+                <button onclick="setSearchCategory('Nuts')" class="px-3 py-1 rounded-full bg-surface-container hover:bg-secondary-container hover:text-on-secondary-fixed transition-colors font-medium cursor-pointer">Nuts &amp; Crunch</button>
+                <button onclick="setSearchCategory('Caramel')" class="px-3 py-1 rounded-full bg-surface-container hover:bg-secondary-container hover:text-on-secondary-fixed transition-colors font-medium cursor-pointer">Caramel</button>
+                <button onclick="setSearchCategory('Silk')" class="px-3 py-1 rounded-full bg-surface-container hover:bg-secondary-container hover:text-on-secondary-fixed transition-colors font-medium cursor-pointer">Silk Range</button>
+            </div>
+
+            <div id="search-results" class="mt-6 max-h-[60vh] overflow-y-auto space-y-3 pr-1"></div>
+        </div>
+    </div>
+
+    <!-- 5. RECIPE DETAIL MODAL -->
+    <div id="recipe-detail-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 overflow-y-auto backdrop-blur-xl bg-background/80">
+        <div class="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-surface-container-lowest border border-white/10 rounded-3xl shadow-2xl p-6 sm:p-8 text-on-surface">
+            <button onclick="closeRecipeModal()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-surface-container hover:bg-surface-container-high flex items-center justify-center transition-colors cursor-pointer z-10">
+                <span class="material-symbols-outlined text-[18px]">close</span>
+            </button>
+            <div class="relative h-64 w-full rounded-2xl overflow-hidden mb-6">
+                <img id="rm-image" src="" alt="" class="w-full h-full object-cover"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+                <div class="absolute bottom-4 left-4 right-4">
+                    <span id="rm-difficulty" class="px-3 py-1 rounded-full bg-secondary-container text-on-secondary-fixed font-bold text-xs shadow-sm"></span>
+                    <h3 id="rm-title" class="font-headline-md text-2xl font-bold text-on-surface mt-2"></h3>
+                </div>
+            </div>
+            <div class="flex items-center gap-4 text-xs text-secondary mb-4">
+                <span class="flex items-center gap-1 font-bold"><span class="material-symbols-outlined text-[16px]">timer</span><span id="rm-preptime"></span></span>
+                <span>•</span>
+                <span>Confectionery Kitchen Studio Recipe</span>
+            </div>
+            <p id="rm-desc" class="text-xs sm:text-sm text-on-surface-variant mb-6 leading-relaxed"></p>
+            <div class="space-y-6 text-xs sm:text-sm">
+                <div>
+                    <h4 class="font-bold text-on-surface uppercase tracking-wider mb-2 text-xs text-secondary">Ingredients Required</h4>
+                    <ul id="rm-ingredients" class="space-y-2"></ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-on-surface uppercase tracking-wider mb-2 text-xs text-secondary">Step-by-Step Instructions</h4>
+                    <ul id="rm-instructions" class="space-y-3"></ul>
+                </div>
+                <div class="p-4 rounded-2xl bg-secondary-container/10 border border-secondary-container/20">
+                    <span class="font-bold text-secondary-container text-xs uppercase block">Chef's Secret Tip:</span>
+                    <p id="rm-cheftip" class="text-xs text-on-surface-variant mt-1 italic"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 6. HAMPER DETAIL MODAL -->
+    <div id="hamper-detail-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 overflow-y-auto backdrop-blur-xl bg-background/80">
+        <div class="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-surface-container-lowest border border-white/10 rounded-3xl shadow-2xl p-6 sm:p-8 text-on-surface">
+            <button onclick="closeHamperModal()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-surface-container hover:bg-surface-container-high flex items-center justify-center transition-colors cursor-pointer z-10">
+                <span class="material-symbols-outlined text-[18px]">close</span>
+            </button>
+            <div class="relative h-64 w-full rounded-2xl overflow-hidden mb-6">
+                <img id="hm-image" src="" alt="" class="w-full h-full object-cover"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+            </div>
+            <h3 id="hm-title" class="font-headline-md text-2xl font-bold text-on-surface"></h3>
+            <p id="hm-tagline" class="text-xs text-secondary-container italic mt-1"></p>
+            <div class="flex items-baseline gap-3 mt-3">
+                <span id="hm-price" class="text-2xl font-bold text-primary-container"></span>
+                <span id="hm-orig-price" class="text-sm text-on-surface-variant/60 line-through"></span>
+                <span class="text-xs text-emerald-400 font-bold ml-auto">Free Luxury Gift Box Wrapping</span>
+            </div>
+            <p id="hm-desc" class="text-xs sm:text-sm text-on-surface-variant mt-4 leading-relaxed"></p>
+            <div class="mt-6">
+                <h4 class="font-bold text-xs text-secondary uppercase tracking-wider mb-3">Included in this Gift Box:</h4>
+                <ul id="hm-items" class="space-y-2"></ul>
+            </div>
+            <button onclick="addHamperToCart()" class="w-full mt-6 py-3.5 rounded-full bg-secondary-container text-on-secondary-fixed hover:bg-secondary-fixed font-bold text-sm shadow-lg flex items-center justify-center gap-2 cursor-pointer">
+                <span class="material-symbols-outlined text-[18px]">card_giftcard</span>
+                <span>Add Gift Box to Cart</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- 7. INFO MODAL (Heritage, Nutrition, Vegetarian, Privacy, Terms) -->
+    <div id="info-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 overflow-y-auto backdrop-blur-xl bg-background/80">
+        <div class="relative w-full max-w-lg bg-surface-container-lowest border border-white/10 rounded-3xl shadow-2xl p-6 sm:p-8 text-on-surface">
+            <button onclick="closeInfoModal()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-surface-container flex items-center justify-center transition-colors cursor-pointer">
+                <span class="material-symbols-outlined text-[18px]">close</span>
+            </button>
+            <h3 id="info-title" class="font-headline-sm text-xl font-bold text-on-surface mb-4 pr-6"></h3>
+            <div id="info-body" class="text-xs sm:text-sm text-on-surface-variant leading-relaxed space-y-3"></div>
+            <button onclick="closeInfoModal()" class="w-full mt-6 py-2.5 rounded-full bg-surface-container hover:bg-surface-container-high font-bold text-xs text-on-surface transition-colors cursor-pointer">
+                Close Information Window
+            </button>
+        </div>
+    </div>
+
+    <!-- 8. PHOTO LIGHTBOX MODAL -->
+    <div id="photo-lightbox-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 overflow-y-auto backdrop-blur-xl bg-background/90">
+        <div class="relative w-full max-w-xl bg-surface-container-lowest border border-white/10 rounded-3xl shadow-2xl overflow-hidden text-on-surface">
+            <button onclick="closeLightboxModal()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-surface/80 backdrop-blur-md hover:bg-surface text-on-surface flex items-center justify-center transition-colors cursor-pointer z-10">
+                <span class="material-symbols-outlined text-[18px]">close</span>
+            </button>
+            <div class="w-full aspect-square bg-black">
+                <img id="lb-image" src="" alt="" class="w-full h-full object-cover"/>
+            </div>
+            <div class="p-6">
+                <span id="lb-handle" class="font-bold text-secondary text-sm block"></span>
+                <p id="lb-caption" class="text-xs text-on-surface-variant mt-2 leading-relaxed"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Filter & Sort Script Handler -->
     <script>
       let activeCategory = 'all';
       let maxPrice = 6.00;
@@ -1103,7 +1452,6 @@
           }
         });
 
-        // Sort visible cards
         const visibleCards = cards.filter(card => card.style.display !== 'none');
         
         if (currentSort === 'price-asc') {
@@ -1116,7 +1464,6 @@
 
         visibleCards.forEach(card => grid.appendChild(card));
 
-        // Update indicator badges
         const badge = document.getElementById('activeFilterBadge');
         const countText = document.getElementById('resultsCount');
 
@@ -1146,25 +1493,6 @@
           setCategoryFilter('all', pills[0]);
         } else {
           applyFilters();
-        }
-      }
-
-      function addToCart(productName, price) {
-        const toast = document.getElementById('cartToast');
-        const toastTitle = document.getElementById('cartToastTitle');
-        const toastSubtitle = document.getElementById('cartToastSubtitle');
-
-        if (toast && toastTitle && toastSubtitle) {
-          toastTitle.textContent = productName + ' Added';
-          toastSubtitle.textContent = price + ' • Free shipping on gift sets';
-
-          toast.classList.remove('translate-y-32', 'opacity-0');
-          toast.classList.add('translate-y-0', 'opacity-100');
-
-          setTimeout(() => {
-            toast.classList.remove('translate-y-0', 'opacity-100');
-            toast.classList.add('translate-y-32', 'opacity-0');
-          }, 2600);
         }
       }
     </script>

@@ -927,15 +927,18 @@ function addToCart(event, productId) {
 
 function updateCartUI() {
     const totalCount = cartItems.reduce((acc, item) => acc + item.qty, 0);
-    const badge = document.getElementById('cartBadge');
-    if (badge) {
-        badge.textContent = totalCount;
-        if (totalCount > 0) {
-            badge.classList.remove('hidden');
-        } else {
-            badge.classList.add('hidden');
+    const badge1 = document.getElementById('cartBadge');
+    const badge2 = document.getElementById('cart-count-badge');
+    [badge1, badge2].forEach(badge => {
+        if (badge) {
+            badge.textContent = totalCount;
+            if (totalCount > 0) {
+                badge.classList.remove('hidden');
+            } else {
+                badge.classList.add('hidden');
+            }
         }
-    }
+    });
 
     // Render Drawer Items
     const container = document.getElementById('cart-drawer-items');
@@ -1487,4 +1490,111 @@ if (document.readyState === 'loading') {
 } else {
     initSupabase();
 }
+
+// --------------------------------------------------------------------------
+// 14. Data Aliases for Seamless Legacy / HTML Compatibility
+// --------------------------------------------------------------------------
+HAMPERS_DATA['hamper-discovery'] = HAMPERS_DATA['royale-box'];
+HAMPERS_DATA['hamper-velvet'] = HAMPERS_DATA['party-pack'];
+HAMPERS_DATA['hamper-nut'] = HAMPERS_DATA['lovers-edition'];
+
+RECIPES_DATA['recipe-ganache'] = RECIPES_DATA['choco-truffles'];
+RECIPES_DATA['recipe-lava'] = RECIPES_DATA['fudge-brownies'];
+RECIPES_DATA['recipe-iced'] = RECIPES_DATA['lava-cake'];
+
+// --------------------------------------------------------------------------
+// 15. Search Modal Controller & Real-Time Filtering
+// --------------------------------------------------------------------------
+function openSearchModal() {
+    const modal = document.getElementById('search-modal');
+    if (!modal) return;
+    modal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+    const input = document.getElementById('search-input');
+    if (input) {
+        input.value = '';
+        setTimeout(() => input.focus(), 100);
+    }
+    renderSearchResults('');
+}
+
+function closeSearchModal() {
+    const modal = document.getElementById('search-modal');
+    if (modal) modal.classList.add('hidden');
+    document.body.style.overflow = '';
+}
+
+function handleSearchInput(query) {
+    renderSearchResults(query);
+}
+
+function setSearchCategory(cat) {
+    const input = document.getElementById('search-input');
+    if (input) {
+        input.value = cat;
+        renderSearchResults(cat);
+    }
+}
+
+function renderSearchResults(query) {
+    const container = document.getElementById('search-results');
+    if (!container) return;
+
+    const q = (query || '').toLowerCase().trim();
+    const matches = Object.values(PRODUCTS_DATA).filter(p => {
+        if (!q) return true;
+        return p.name.toLowerCase().includes(q) ||
+               p.tagline.toLowerCase().includes(q) ||
+               p.category.toLowerCase().includes(q) ||
+               p.description.toLowerCase().includes(q) ||
+               (p.highlights && p.highlights.some(h => h.toLowerCase().includes(q)));
+    });
+
+    if (matches.length === 0) {
+        container.innerHTML = `
+            <div class="text-center py-8 text-on-surface-variant">
+                <span class="material-symbols-outlined text-[36px] text-secondary-container">search_off</span>
+                <p class="font-bold text-sm mt-2">No chocolates matching "${query}"</p>
+                <p class="text-xs mt-1">Try searching for "Silk", "Almond", "Fruit", or "Classic"</p>
+            </div>
+        `;
+        return;
+    }
+
+    container.innerHTML = matches.map(p => `
+        <div onclick="closeSearchModal(); openProductModal('${p.id}');" class="flex items-center gap-4 p-3 rounded-2xl bg-surface-container hover:bg-surface-container-high border border-white/5 cursor-pointer transition-all group">
+            <img src="${p.image}" alt="${p.name}" class="w-16 h-16 rounded-xl object-cover bg-primary-container/5 shrink-0 group-hover:scale-105 transition-transform" onerror="this.onerror=null; this.src='https://lh3.googleusercontent.com/aida-public/AB6AXuB3R1V4d72d_N_j8YJ11Vst6_qA6g7t972lX8yKj_Qy0FvN6u_9H47eGk0970aK26F74-qR82xJj19kZ_wB9a7e0V_b1h_N14fXz80hC0y-mR0d8zR21J04aX73y4596d-3s2207b1d';"/>
+            <div class="flex-1 min-w-0">
+                <div class="flex items-center justify-between">
+                    <h5 class="font-title-lg text-sm font-bold text-on-surface group-hover:text-secondary transition-colors truncate">${p.name}</h5>
+                    <span class="font-headline-sm text-sm text-primary-container font-bold">$${p.price.toFixed(2)}</span>
+                </div>
+                <p class="text-xs text-on-surface-variant line-clamp-1 mt-0.5">${p.tagline}</p>
+                <div class="flex items-center gap-2 mt-1 text-[11px] text-secondary-container">
+                    <span>${p.category}</span> • <span>${p.weight}</span>
+                </div>
+            </div>
+        </div>
+    `).join('');
+}
+
+// --------------------------------------------------------------------------
+// 16. Keyboard Accessibility & Shortcuts
+// --------------------------------------------------------------------------
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeProductModal();
+        closeCartDrawer();
+        closeCheckoutModal();
+        closeSearchModal();
+        closeRecipeModal();
+        closeHamperModal();
+        closeInfoModal();
+        closeLightboxModal();
+    } else if ((e.key === '/' || (e.ctrlKey && e.key === 'k')) && !['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement.tagName)) {
+        e.preventDefault();
+        openSearchModal();
+    }
+});
+
 
