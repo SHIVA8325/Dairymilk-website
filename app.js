@@ -8,6 +8,18 @@ document.addEventListener('DOMContentLoaded', () => {
         lucide.createIcons();
     }
 
+    // Navbar scroll transition listener
+    window.addEventListener('scroll', () => {
+        const nav = document.querySelector('.navbar');
+        if (nav) {
+            if (window.scrollY > 40) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        }
+    });
+
     // Configuration
     const TOTAL_FRAMES = 240;
     const FRAME_PREFIX = 'frames/ezgif-frame-';
@@ -800,8 +812,12 @@ function openProductModal(productId) {
     if (!modal) return;
 
     // Populate data
-    document.getElementById('pm-image').src = product.image;
-    document.getElementById('pm-image').alt = product.name;
+    const pmImg = document.getElementById('pm-image');
+    if (pmImg) {
+        pmImg.src = product.image;
+        pmImg.alt = product.name;
+        pmImg.onerror = function() { handleImageError(this); };
+    }
     document.getElementById('pm-badge').textContent = product.badge;
     document.getElementById('pm-badge').className = `font-label-sm text-label-sm px-3 py-1 rounded-full font-bold shadow-sm ${product.badgeBg}`;
     document.getElementById('pm-title').textContent = product.name;
@@ -1482,6 +1498,13 @@ async function trackNewsletter(email) {
             console.warn('Supabase newsletter log notice:', err);
         }
     }
+}
+
+// Global image fallback handler
+function handleImageError(img) {
+    if (!img) return;
+    img.onerror = null;
+    img.src = 'https://lh3.googleusercontent.com/aida-public/AB6AXuBp9cGSEaC43uWLBAUmqs4jOeaVjY3gRUDD_V3H3DTwI8QIRV0w2YQQjqt11Ho7NhdAznDJ0r-tPyb4fFJCCwCkgNgugt4twVmQTcXsQCKMOKXcEGg1Un03o8eMYjLHbmZVHfJG9i19r6G9705ugrzOoelCnqZ4xiJyLZMKPKkxJRtjXQVP7hJG-7nv7sL3c1Q3SYl_RbS6W0l2_gQ8GYWyeSe96zWBkGI3QsZyJZrfqTrqhCMxi93plQ';
 }
 
 // Auto-initialize on window load

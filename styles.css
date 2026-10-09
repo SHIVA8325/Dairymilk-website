@@ -138,15 +138,21 @@ body {
     padding: 0 1.8rem;
     border-radius: 20px;
     z-index: 1000;
-    transition: all 0.3s ease;
+    transition: background 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease, transform 0.3s ease;
 }
 
 .glass {
-    background: var(--glass-bg);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid var(--glass-border);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    background: rgba(22, 0, 51, 0.4);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+.navbar.scrolled {
+    background: rgba(18, 0, 42, 0.88);
+    border-color: rgba(254, 174, 44, 0.35);
+    box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.55);
 }
 
 .nav-brand {
